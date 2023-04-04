@@ -1,30 +1,46 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div>
+    <div class="cabecalho">
+    <div>
+      <RouterLink to="/" class="escritaCabecalho">
+        Home
+      </RouterLink>
+    </div>
+    <div class="escritaCabecalho">
+      Filmes
+    </div>
+    <div class="escritaCabecalho">
+      Minha conta
+    </div>
+  </div>
+  </div>
+  
+
+  <router-view />
 </template>
-
+  
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.cabecalho {
+  width: 100%;
+  background-color: #121212;
+  display: flex;
+  gap: 3vw;
+  align-items: center;
+  justify-content: center;
+  
 }
 
-nav {
-  padding: 30px;
+.escritaCabecalho {
+  text-decoration: none;
+  color: #B2B2B2;
+  padding: 1vh;
+  font-size: 3vh;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+.escritaCabecalho:hover {
+  cursor: pointer;
+  color: #f64348
 }
 </style>
+  
+
