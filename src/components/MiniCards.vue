@@ -9,7 +9,7 @@ export default {
     props: ["imagem"]
 }
 </script>
-<style>
+<style scoped>
 
 .card {
     height: 35vh;

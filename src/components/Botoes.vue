@@ -22,7 +22,7 @@ export default {
     name: "botoesComponent"
 }
 </script>
-<style>
+<style scoped>
 .conjuntoBotoes {
     margin: 3vh 0 0 7vw;
     gap: 3vh;

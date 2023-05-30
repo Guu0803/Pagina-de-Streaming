@@ -20,16 +20,14 @@
             <BotaoAcao  text="Entrar" />
         </div>
     </div>
-    <rodape/>
+    
 </template>
 <script>
 import BotaoAcao from '@/components/BotoesAcao.vue'
-import rodape from '@/components/Rodape.vue'
 export default {
     name: "pagina-login",
     components: {
         BotaoAcao,
-        rodape
     }
 }
 </script>

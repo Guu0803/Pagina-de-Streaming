@@ -32,7 +32,7 @@ export default {
     name: "banerComponent",
 }
 </script>
-<style>
+<style scoped>
 .conteiner-banner {
     display: flex;
     justify-content: center;

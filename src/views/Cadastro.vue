@@ -46,16 +46,13 @@
         </div>
 
     </div>
-    <rodape />
 </template>
 <script>
-import rodape from '@/components/Rodape.vue'
 import BotoesAcao from '@/components/BotoesAcao.vue'
 export default {
     name: "pagina-cadastro",
     components: {
         BotoesAcao,
-        rodape
     }
 
 }

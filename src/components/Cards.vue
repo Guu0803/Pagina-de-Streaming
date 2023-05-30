@@ -1,7 +1,6 @@
 <template>
     <div class="conteiner-big-cards">
         <img :src="imagemGrande" class="big-card">
-        
     </div>
 </template>
  <script>
@@ -10,7 +9,7 @@
     props:["imagemGrande"]
  }
 </script>
-<style>
+<style scoped>
 .conteiner-big-cards {
     display: flex;
     justify-content: center;

@@ -9,7 +9,7 @@ export default {
     name: "capa-pagina"
 }
 </script>
-<style>
+<style scoped>
     .tela-fundo{
         background-color:#121212;
         width: 100%;

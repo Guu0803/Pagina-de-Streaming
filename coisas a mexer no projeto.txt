@@ -1,0 +1,24 @@
+
+cabeçalho
+* menu suspenso em generos 
+* nome do usuario em frente ao logo (user) e um menu suspenso
+* logo do  streaming
+
+
+banner principal 
+* mudar banner pela seta
+* acresentar bolinhas para trocar banner ao clicar
+* ir para pagina especifica do filme/serie 
+* (talvez) colocar sinopse
+
+corpo
+* mudar de pagina ao clicar nos subtitulos (series, filmes, etc....)
+* mudar "carrosel" ao clicar nas setas
+* ir para pagina especifica do filme/serie (acrescentar botao "ver todos") 
+* retirar sidebars
+
+rodape 
+* revisar detalhes de rodape com Dan e Mira
+
+generos 
+* filtrar a pagina com base no genero clicado
