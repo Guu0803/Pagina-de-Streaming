@@ -1,7 +1,6 @@
 
 cabeçalho
-* menu suspenso em generos 
-* nome do usuario em frente ao logo (user) e um menu suspenso
+* nome do usuario em frente ao logo 'user' (talvez)
 * logo do  streaming
 
 
@@ -10,6 +9,7 @@ banner principal
 * acresentar bolinhas para trocar banner ao clicar
 * ir para pagina especifica do filme/serie 
 * (talvez) colocar sinopse
+* re-estilizar baner 
 
 corpo
 * mudar de pagina ao clicar nos subtitulos (series, filmes, etc....)
