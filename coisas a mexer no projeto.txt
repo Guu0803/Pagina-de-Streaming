@@ -1,7 +1,9 @@
+* ajustar espaçamento entre filmes/series
 
 cabeçalho
 * nome do usuario em frente ao logo 'user' (talvez)
 * logo do  streaming
+* mexer na seta da categoria
 
 
 banner principal 
@@ -19,6 +21,7 @@ corpo
 
 rodape 
 * revisar detalhes de rodape com Dan e Mira
+* acrescentar 
 
 generos 
 * filtrar a pagina com base no genero clicado

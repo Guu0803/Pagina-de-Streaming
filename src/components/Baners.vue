@@ -1,28 +1,53 @@
 <template>
     <div class="tela">
         <div class="conteiner-banner" :style="getImage()">
-            <!-- <span class="material-icons seta-voltar">
-                arrow_back_ios
-            </span> -->
             <div class="conteudo-baner">
-
                 <div class="titulo-banner">
-                    {{ tituloBaner }}
+                    {{ tituloBanner }}
+                </div>
+                <div class="sinopse">
+                    {{ sinopseBanner }}
                 </div>
                 <div class="conteiner-reproduzir">
-                    <span class="material-icons botao-banner">
-                        play_circle_filled
-                    </span>
-                    Reproduzir
-                    <span class="material-icons botao-info">
-                        info
-                    </span>
-                </div>
+                    <div class="play">
+                        <span class="material-icons botao-play">
+                            play_circle_filled
+                        </span>
+                        Play
+                    </div>
+                    <div class="dropdown">
+                        <span class="material-icons info">
+                            info
+                        </span>
+                        <div class="conteudo-dropdown">
+                            <div class="escrita-dropdown">
+                                Informações
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <span class="material-icons add" v-on:click="adicionarLista()" :style="addLista()">
+                            add_circle
+                        </span>
+                        <div class="conteudo-dropdown-add-lista">
+                            <div class="escrita-dropdown">
+                                Adicionar a Lista
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <span class="material-icons check" v-on:click="retirarLista()" :style="aparecerCheck()">
+                            check_circle
+                        </span>
+                        <div class="conteudo-dropdown-remover-lista">
+                            <div class="escrita-dropdown">
+                                Remover da Lista
+                            </div>
+                        </div>
 
+                    </div>
+                </div>
             </div>
-            <!-- <span class="material-icons seta-proximo">
-                arrow_forward_ios
-            </span> -->
         </div>
     </div>
 </template>
@@ -30,10 +55,35 @@
 
 export default {
     name: "banerComponent",
-    props: ["tituloBaner", "imagemBaner",],
+    props: ["tituloBanner", "imagemBanner", "sinopseBanner",],
+    data() {
+        return {
+            adicionar: 1
+        }
+    },
     methods: {
         getImage() {
-            return "background-image: url(" + this.imagemBaner + ")"
+            return "background-image: url(" + this.imagemBanner + ")"
+        },
+        adicionarLista() {
+            this.adicionar = 2
+        },
+        retirarLista() {
+            this.adicionar = 1
+        },
+        addLista() {
+            if (this.adicionar == 2) {
+                return "display:none;"
+            } else {
+                return "display:block"
+            }
+        },
+        aparecerCheck() {
+            if (this.adicionar == 2) {
+                return "display:block;"
+            } else {
+                return "display:none"
+            }
         }
     }
 }
@@ -64,62 +114,97 @@ export default {
 
 .titulo-banner {
     font-size: 9vh;
-    margin-left: 10vh;
+    margin-left: 5vh;
+    width: 40vw;
 }
 
 .conteiner-reproduzir {
-    font-size: 3.5vh;
-    margin-left: 6vw;
-    padding-top: 3vh;
+    margin: 3vh 0 0 6vh;
     display: flex;
     align-items: center;
 }
 
-.botao-banner {
-    font-size: 5vh;
-    margin-right: 0.5vw;
+.sinopse {
+    margin-left: 6vh;
+    width: 30vw;
+    font-size: 2.3vh;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #34343440;
+}
+
+.play {
+    display: flex;
+    align-items: center;
+    transition: 300ms;
     line-height: 6vh;
-    transition: 300ms;
+    font-size: 4vh;
+    gap: 1vh;
+    letter-spacing: 1px;
 }
 
-.botao-banner:hover {
+.botao-play {
+    font-size: 4.5vh;
+}
+
+.play:hover {
     cursor: pointer;
     color: #f64348;
     transition: 300ms;
-    scale: 1.4;
+    scale: 1.2;
 }
 
-.botao-info {
-    margin-left: 2vw;
-    font-size: 3vh;
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.8vh;
 }
 
-.botao-info:hover {
+.escrita-dropdown {
+    color: white;
+    display: block;
     cursor: pointer;
-    color: #f64348;
+    transition: 200ms;
+}
+
+.conteudo-dropdown,
+.conteudo-dropdown-remover-lista,
+.conteudo-dropdown-add-lista {
+    display: none;
+    position: absolute;
+    background-color: #343434;
+    padding: 1vh;
+    z-index: 1;
+    margin-left: -1.5vh;
+    border-radius: 10px;
+}
+
+.dropdown:hover .conteudo-dropdown {
+    display: block;
     transition: 300ms;
 }
 
-.seta-voltar {
-    position: absolute;
-    left: 5.3vw;
-    font-size: 6vh;
-    width: fit-content;
+.dropdown:hover .conteudo-dropdown-add-lista {
+    display: block;
+    transition: 300ms;
 }
 
-.seta-proximo {
-    position: absolute;
-    right: 5vw;
-    font-size: 6vh;
+.dropdown:hover .conteudo-dropdown-remover-lista {
+    display: block;
+    transition: 300ms;
 }
 
-.seta-proximo:hover {
-    background-color: #40404040;
+.info,
+.add,
+.check {
+    font-size: 5vh;
+    transition: 300ms;
     cursor: pointer;
+    margin-left: 1vw;
 }
 
-.seta-voltar:hover {
-    background-color: #40404040;
-    cursor: pointer;
+.info:hover,
+.add:hover,
+.check:hover {
+    color: #f64348;
 }
 </style>

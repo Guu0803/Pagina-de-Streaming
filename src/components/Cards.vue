@@ -22,7 +22,7 @@
     height: 65vh;
     width: 25vw;
     border-radius: 10px;
-    box-shadow: 1.5vh 1.5vh 2vh black, -1.5vh -1.5vh 2vh #343434;
+    box-shadow: 1.5vh 1.5vh 2vh black, -0.5vh -0.5vh 2vh #343434;
     cursor: pointer;
     transition: 300ms;
 }

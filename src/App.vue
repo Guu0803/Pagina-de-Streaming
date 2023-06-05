@@ -9,9 +9,6 @@
       <div class="dropdown-conteiner">
         <RouterLink to="/categoria" class="escrita-cabecalho">
           Categorias
-          <span class="material-icons">
-            arrow_drop_down
-          </span>
         </RouterLink>
         <div class="conteudo-dropdown">
           <div class="escrita-dropdown">
