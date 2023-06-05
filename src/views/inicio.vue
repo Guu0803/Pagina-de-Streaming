@@ -4,8 +4,7 @@
             <div class="botao-volta" v-on:click="passarAnterior()">
                 &#10094;
             </div>
-            <banners :imagemBanner="require('@/assets/the-last-of-us.jpg')" tituloBanner="The Last of Us" 
-                sinopseBanner="Vinte anos após um fungo que transforma os seres humanos em seres canibalísticos agressivos devastar o mundo, 
+            <banners :imagemBanner="require('@/assets/the-last-of-us.jpg')" tituloBanner="The Last of Us" sinopseBanner="Vinte anos após um fungo que transforma os seres humanos em seres canibalísticos agressivos devastar o mundo, 
                 os sobreviventes Joel Miller (Pedro Pascal) e Ellie (Bella Ramsey) precisam lutar contra circunstâncias brutais e assassinos
                 implacáveis para encontrar um grupo que pode ser sua salvação." v-if="pagina == 1" />
             <banners :imagemBanner="require('@/assets/john-wick-4.jpeg')" tituloBanner="John Wick 4: Baba Yaga"
@@ -16,49 +15,53 @@
                 tituloBanner="Transformers: O Despertar das Feras"
                 sinopseBanner="Nos anos 1990, Maximals, Predacons e Terrorcons se juntam à batalha entre Autobots e Decepticons."
                 v-if="pagina == 3" />
-            <banners :imagemBanner="require('@/assets/guardioes-da-galaxia-3.jpg')" sinopseBanner="Peter Quill deve reunir sua equipe para defender
-                o universo e proteger um dos seus. Se a missão não for totalmente bem-sucedida, isso pode levar ao fim dos Guardiões."
-                tituloBanner="Guadiões da Galáxia: Vol.3" v-if="pagina == 4" />
+            <banners :imagemBanner="require('@/assets/guardioes-da-galaxia-3.jpg')"
+                sinopseBanner="Peter Quill deve reunir sua equipe para defender
+                o universo e proteger um dos seus. Se a missão não for totalmente bem-sucedida, isso pode levar ao fim dos Guardiões." tituloBanner="Guadiões da Galáxia: Vol.3"
+                v-if="pagina == 4" />
             <div class="botao-proximo" v-on:click="passarFrente()">
                 &#10095;
             </div>
         </div>
-        <div class="titulo-fileiras">
-            Séries
+        <div class="separacao">
+            <div class="titulo-fileiras">
+                Séries
+            </div>
+            <div class="conteiner-cards">
+                <span class="material-icons seta" v-on:click="voltarSeries()">
+                    keyboard_arrow_left
+                </span>
+                <div class="fileira-cards" v-if="series == 1">
+                    <miniCards :imagem="require('@/assets/the-witcher.jpg')" />
+                    <miniCards :imagem="require('@/assets/casa-de-papel.jpg')" />
+                    <miniCards :imagem="require('@/assets/house.jpg')" />
+                    <miniCards :imagem="require('@/assets/mr-robot.jpg')" />
+                    <miniCards :imagem="require('@/assets/prison-break.jpg')" />
+                    <miniCards :imagem="require('@/assets/stranger-things.jpg')" />
+                </div>
+                <div class="fileira-cards" v-if="series == 2">
+                    <miniCards :imagem="require('@/assets/citadel.jpg')" />
+                    <miniCards :imagem="require('@/assets/strain.png')" />
+                    <miniCards :imagem="require('@/assets/moon-night.jpg')" />
+                    <miniCards :imagem="require('@/assets/fauda.jpg')" />
+                    <miniCards :imagem="require('@/assets/bodyguard.jpg')" />
+                    <miniCards :imagem="require('@/assets/origem.jpg')" />
+                </div>
+                <div class="fileira-cards" v-if="series == 3">
+                    <miniCards :imagem="require('@/assets/halo.png')" />
+                    <miniCards :imagem="require('@/assets/peaky-blinders.png')" />
+                    <miniCards :imagem="require('@/assets/ted-lasso.png')" />
+                    <miniCards :imagem="require('@/assets/sweet-tooth.png')" />
+                    <miniCards :imagem="require('@/assets/loki.png')" />
+                    <miniCards :imagem="require('@/assets/walking-dead.png')" />
+                </div>
+                <span class="material-icons seta" v-on:click="passarSeries()">
+                    keyboard_arrow_right
+                </span>
+            </div>
         </div>
-        <div class="conteiner-cards">
-            <span class="material-icons seta" v-on:click="voltarSeries()">
-                keyboard_arrow_left
-            </span>
-            <div class="fileira-cards" v-if="series == 1">
-                <miniCards :imagem="require('@/assets/the-witcher.jpg')" />
-                <miniCards :imagem="require('@/assets/casa-de-papel.jpg')" />
-                <miniCards :imagem="require('@/assets/house.jpg')" />
-                <miniCards :imagem="require('@/assets/mr-robot.jpg')" />
-                <miniCards :imagem="require('@/assets/prison-break.jpg')" />
-                <miniCards :imagem="require('@/assets/stranger-things.jpg')" />
-            </div>
-            <div class="fileira-cards" v-if="series == 2">
-                <miniCards :imagem="require('@/assets/citadel.jpg')" />
-                <miniCards :imagem="require('@/assets/strain.png')" />
-                <miniCards :imagem="require('@/assets/moon-night.jpg')" />
-                <miniCards :imagem="require('@/assets/fauda.jpg')" />
-                <miniCards :imagem="require('@/assets/bodyguard.jpg')" />
-                <miniCards :imagem="require('@/assets/origem.jpg')" />
-            </div>
-            <div class="fileira-cards" v-if="series == 3">
-                <miniCards :imagem="require('@/assets/halo.png')" />
-                <miniCards :imagem="require('@/assets/peaky-blinders.png')" />
-                <miniCards :imagem="require('@/assets/ted-lasso.png')" />
-                <miniCards :imagem="require('@/assets/sweet-tooth.png')" />
-                <miniCards :imagem="require('@/assets/loki.png')" />
-                <miniCards :imagem="require('@/assets/walking-dead.png')" />
-            </div>
-            <span class="material-icons seta" v-on:click="passarSeries()">
-                keyboard_arrow_right
-            </span>
+        <div class="separacao">
         </div>
-
         <div class="titulo-fileiras">
             Em alta
         </div>
@@ -80,7 +83,8 @@
                 keyboard_arrow_right
             </span>
         </div>
-
+        <div class="separacao">
+        </div>
         <div class="titulo-fileiras">
             Filmes
         </div>
@@ -116,6 +120,8 @@
             <span class="material-icons seta" v-on:click="passarFilmes()">
                 keyboard_arrow_right
             </span>
+        </div>
+        <div class="separacao">
         </div>
         <div class="titulo-fileiras">
             Animes
@@ -254,12 +260,16 @@ export default {
     height: 100%;
 }
 
+/* .separacao {
+    
+} */
+
 .botao-volta,
 .botao-proximo {
     cursor: pointer;
     width: 3vw;
     text-align: center;
-    color: white;
+    color: #B2B2B2;
     font-weight: bold;
     font-size: 5vh;
     user-select: none;
@@ -278,24 +288,6 @@ export default {
 .botao-volta:hover,
 .botao-proximo:hover {
     background-color: rgba(0, 0, 0, 0.8)
-}
-
-.numeros-paginas {
-    color: #f2f2f2;
-    font-size: 2.5vh;
-}
-
-.circulo {
-    cursor: pointer;
-    height: 2vh;
-    width: 2vh;
-    background-color: #bbb;
-    border-radius: 50%;
-    transition: background-color 0.6s ease;
-}
-
-.circulo:hover {
-    background-color: #717171;
 }
 
 .titulo-fileiras {
@@ -333,5 +325,10 @@ export default {
 .seta {
     font-size: 8vh;
     cursor: pointer;
+    transition: 300ms;
+}
+.seta:hover {
+    background-color: black;
+    transition: 300ms;
 }
 </style>

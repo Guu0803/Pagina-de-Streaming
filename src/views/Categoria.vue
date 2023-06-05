@@ -1,23 +1,14 @@
 <template>
-    <div class="generos">
-        <cardCategorias texto="Séries"/>
-        <cardCategorias texto="Filmes"/>
-        <cardCategorias texto="Animes"/>
-    </div>
+    <animesComponents/>
 </template> 
 <script>
-import cardCategorias from '@/components/Catalago.vue'
+import animesComponents from '@/components/AnimesComponent.vue'
 export default {
     name:"categoryPage",
     components: {
-        cardCategorias
+        animesComponents
     }
 }
 </script>
 <style scoped>
-.generos {
-    margin: 2vw;
-    display: flex;
-    gap: 3vw;
-}
 </style>

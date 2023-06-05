@@ -130,6 +130,8 @@ export default {
     font-size: 2.3vh;
     font-family: 'Times New Roman', Times, serif;
     background-color: #34343440;
+    padding: 1vh;
+    border-radius: 10px;
 }
 
 .play {
@@ -176,6 +178,7 @@ export default {
     z-index: 1;
     margin-left: -1.5vh;
     border-radius: 10px;
+    letter-spacing: 1px;
 }
 
 .dropdown:hover .conteudo-dropdown {
