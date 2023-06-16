@@ -23,47 +23,49 @@
                 &#10095;
             </div>
         </div>
-        <div class="separacao">
-            <div class="titulo-fileiras">
+        <div class="titulo-fileiras">
+            <router-link to="/categoria/series/" class="link-titulo">
                 Séries
-            </div>
-            <div class="conteiner-cards">
-                <span class="material-icons seta" v-on:click="voltarSeries()">
+            </router-link>
+        </div>
+        <div class="separacao">
+        </div>
+        <div class="conteiner-cards">
+            <span class="material-icons seta" v-on:click="voltarSeries()">
                     keyboard_arrow_left
                 </span>
-                <div class="fileira-cards" v-if="series == 1">
-                    <miniCards :imagem="require('@/assets/the-witcher.jpg')" />
-                    <miniCards :imagem="require('@/assets/casa-de-papel.jpg')" />
-                    <miniCards :imagem="require('@/assets/house.jpg')" />
-                    <miniCards :imagem="require('@/assets/mr-robot.jpg')" />
-                    <miniCards :imagem="require('@/assets/prison-break.jpg')" />
-                    <miniCards :imagem="require('@/assets/stranger-things.jpg')" />
-                </div>
-                <div class="fileira-cards" v-if="series == 2">
-                    <miniCards :imagem="require('@/assets/citadel.jpg')" />
-                    <miniCards :imagem="require('@/assets/strain.png')" />
-                    <miniCards :imagem="require('@/assets/moon-night.jpg')" />
-                    <miniCards :imagem="require('@/assets/fauda.jpg')" />
-                    <miniCards :imagem="require('@/assets/bodyguard.jpg')" />
-                    <miniCards :imagem="require('@/assets/origem.jpg')" />
-                </div>
-                <div class="fileira-cards" v-if="series == 3">
-                    <miniCards :imagem="require('@/assets/halo.png')" />
-                    <miniCards :imagem="require('@/assets/peaky-blinders.png')" />
-                    <miniCards :imagem="require('@/assets/ted-lasso.png')" />
-                    <miniCards :imagem="require('@/assets/sweet-tooth.png')" />
-                    <miniCards :imagem="require('@/assets/loki.png')" />
-                    <miniCards :imagem="require('@/assets/walking-dead.png')" />
-                </div>
-                <span class="material-icons seta" v-on:click="passarSeries()">
+            <div class="fileira-cards" v-if="series == 1">
+                <miniCards :imagem="require('@/assets/the-witcher.jpg')" />
+                <miniCards :imagem="require('@/assets/casa-de-papel.jpg')" />
+                <miniCards :imagem="require('@/assets/house.jpg')" />
+                <miniCards :imagem="require('@/assets/mr-robot.jpg')" />
+                <miniCards :imagem="require('@/assets/prison-break.jpg')" />
+                <miniCards :imagem="require('@/assets/stranger-things.jpg')" />
+            </div>
+            <div class="fileira-cards" v-if="series == 2">
+                <miniCards :imagem="require('@/assets/citadel.jpg')" />
+                <miniCards :imagem="require('@/assets/strain.png')" />
+                <miniCards :imagem="require('@/assets/moon-night.jpg')" />
+                <miniCards :imagem="require('@/assets/fauda.jpg')" />
+                <miniCards :imagem="require('@/assets/bodyguard.jpg')" />
+                <miniCards :imagem="require('@/assets/origem.jpg')" />
+            </div>
+            <div class="fileira-cards" v-if="series == 3">
+                <miniCards :imagem="require('@/assets/halo.png')" />
+                <miniCards :imagem="require('@/assets/peaky-blinders.png')" />
+                <miniCards :imagem="require('@/assets/ted-lasso.png')" />
+                <miniCards :imagem="require('@/assets/sweet-tooth.png')" />
+                <miniCards :imagem="require('@/assets/loki.png')" />
+                <miniCards :imagem="require('@/assets/walking-dead.png')" />
+            </div>
+            <span class="material-icons seta" v-on:click="passarSeries()">
                     keyboard_arrow_right
                 </span>
-            </div>
+        </div>
+        <div class="titulo-fileiras link-titulo">
+            Em alta
         </div>
         <div class="separacao">
-        </div>
-        <div class="titulo-fileiras">
-            Em alta
         </div>
         <div div class="conteiner-cards">
             <span class="material-icons seta" v-on:click="voltarEmAlta()">
@@ -83,13 +85,14 @@
                 keyboard_arrow_right
             </span>
         </div>
+        <div class="titulo-fileiras">
+            <router-link to="/categoria/filmes/" class="link-titulo">
+                Filmes
+            </router-link>
+        </div>
         <div class="separacao">
         </div>
-        <div class="titulo-fileiras">
-            Filmes
-        </div>
         <div class="conteiner-cards">
-
             <span class="material-icons seta" v-on:click="voltarFilmes()">
                 keyboard_arrow_left
             </span>
@@ -121,10 +124,12 @@
                 keyboard_arrow_right
             </span>
         </div>
-        <div class="separacao">
-        </div>
         <div class="titulo-fileiras">
-            Animes
+            <router-link to="/categoria/animes/" class="link-titulo">
+                Animes
+            </router-link>
+        </div>
+        <div class="separacao">
         </div>
         <div class="conteiner-cards">
             <span class="material-icons seta" v-on:click="voltarAnimes()">
@@ -260,15 +265,29 @@ export default {
     height: 100%;
 }
 
-/* .separacao {
-    
-} */
-
-.botao-volta,
-.botao-proximo {
+.botao-volta {
+    position: relative;
+    left: 3vw;
     cursor: pointer;
-    width: 3vw;
-    text-align: center;
+    width: 4vw;
+    height: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #B2B2B2;
+    font-weight: bold;
+    font-size: 5vh;
+    user-select: none;
+}
+.botao-proximo {
+    position: relative;
+    right: 3vw;
+    cursor: pointer;
+    width: 4vw;
+    height: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #B2B2B2;
     font-weight: bold;
     font-size: 5vh;
@@ -280,25 +299,36 @@ export default {
     align-items: center;
 }
 
-.botao-proximo {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
 .botao-volta:hover,
 .botao-proximo:hover {
     background-color: rgba(0, 0, 0, 0.8)
 }
 
+.separacao {
+    width: 95%;
+    height: 1px;
+    background-image: linear-gradient(to right, #898989, #1f1f1f);
+    margin: 0 0 3vh 4vw;
+}
+
 .titulo-fileiras {
     color: #B2B2B2;
     font-size: 4vh;
-    margin: 2vh 0 2vh 4vw;
+    margin: 5vw 0 0 7vw;
     cursor: pointer;
-    width: fit-content;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2vw;
 }
 
-.titulo-fileiras:hover {
+.link-titulo {
+    text-decoration: none;
+    color: #B2B2B2;
+}
+
+.link-titulo:hover {
     color: #f64348;
 }
 
@@ -314,7 +344,6 @@ export default {
     width: 100%;
     display: flex;
     gap: 1.5vw;
-    padding: 1vw;
     width: fit-content;
 }
 
@@ -323,10 +352,11 @@ export default {
 }
 
 .seta {
-    font-size: 8vh;
+    font-size: 7vh;
     cursor: pointer;
     transition: 300ms;
 }
+
 .seta:hover {
     background-color: black;
     transition: 300ms;

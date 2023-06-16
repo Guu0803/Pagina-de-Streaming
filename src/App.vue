@@ -7,19 +7,19 @@
         </RouterLink>
       </div>
       <div class="dropdown-conteiner">
-        <RouterLink to="/categoria" class="escrita-cabecalho">
+        <router-link to="/categoria" class="escrita-cabecalho">
           Categorias
-        </RouterLink>
+        </router-link>
         <div class="conteudo-dropdown">
-          <div class="escrita-dropdown">
+          <router-link to="/categoria/series/" class="escrita-dropdown">
             Séries
-          </div>
-          <div class="escrita-dropdown">
+          </router-link>
+          <router-link to="/categoria/filmes/" class="escrita-dropdown">
             Filmes
-          </div>
-          <div class="escrita-dropdown">
+          </router-link>
+          <router-link to="/categoria/animes/" class="escrita-dropdown">
             Animes
-          </div>
+          </router-link>
         </div>
       </div>
 
@@ -60,18 +60,33 @@
     <router-view />
 
     <div class="rodape">
-      <div class="infoRodape">
-        <div class="termos">
-          Termos e aviso de privacidade
+      <div class="contatos">
+        <div class="escrita-social-media">
+          Contatos
         </div>
-        <div class="termos">
-          Enviar feedback
+        <div class="social-media">
+          <img src="@/assets/instagram.svg">
+          <div class="escrita-social-media">
+            Instagram
+          </div>
         </div>
-        <div class="termos">
-          Ajuda
+        <div class="social-media">
+          <img src="@/assets/facebook.svg">
+          <div class="escrita-social-media">
+            Facebook
+          </div>
         </div>
-        <div>
-          <img src="@/components/iconesRodape/copyright.png"> 1923-2023, Disney.com, Inc. ou suas afiliadas.
+        <div class="social-media">
+          <img src="@/assets/twitter.svg">
+          <div class="escrita-social-media">
+            Twitter
+          </div>
+        </div>
+        <div class="social-media">
+          <img src="@/assets/github.svg">
+          <div class="escrita-social-media">
+            https://github.com/Guu0803
+          </div>
         </div>
       </div>
     </div>
@@ -119,6 +134,7 @@
   display: block;
   cursor: pointer;
   transition: 200ms;
+  text-decoration: none;
 }
 
 .escrita-dropdown:hover {
@@ -141,7 +157,6 @@
 
 .conteiner-pesquisa {
   display: flex;
-  
 }
 
 .icones-cabecalho {
@@ -150,8 +165,8 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-
 }
+
 .lupa {
   font-size: 4vh;
   color: #B2B2B2;
@@ -164,27 +179,25 @@
 }
 
 .rodape {
-  padding: 1vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #000000;
+  margin-top: 10vw;
+  padding: 3vw 0 3vw 4vw;
   width: 99vw;
+  background-image: linear-gradient(to bottom,#060606,#121212,#1f1f1f, #2c2c2c,#393939,#454545,#5f5f5f );
+  height: 40vh;
 }
 
-.infoRodape {
+.social-media {
   display: flex;
-  color: white;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  gap: 1vw;
   align-items: center;
 }
 
-.termos:hover {
+.escrita-social-media {
+  color: #B2B2B2;
   cursor: pointer;
-  color: #f64348
 }
-
+.escrita-social-media:hover {
+  color:#f64348 ;
+}
 input {
   border-radius: 10px;
   border: none;

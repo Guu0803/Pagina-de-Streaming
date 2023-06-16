@@ -12,8 +12,8 @@ export default {
 <style scoped>
 
 .card {
-    height: 35vh;
-    width: 13vw;
+    height: 40vh;
+    width: 14vw;
     border-radius: 10px;
     box-shadow: 1.5vh 1.5vh 2vh black, -0.5vh -0.5vh 2vh #343434;
     cursor: pointer;

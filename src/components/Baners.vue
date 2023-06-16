@@ -99,7 +99,7 @@ export default {
     border-radius: 10px;
     color: white;
     box-shadow: 1.5vh 1.5vh 2vh black, -1.5vh -1.5vh 2vh #343434;
-    width: 90vw;
+    width: 95vw;
     height: 70vh;
     background-size: cover;
     display: flex;
@@ -204,7 +204,6 @@ export default {
     cursor: pointer;
     margin-left: 1vw;
 }
-
 .info:hover,
 .add:hover,
 .check:hover {

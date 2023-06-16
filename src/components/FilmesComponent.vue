@@ -2,7 +2,7 @@
     <div class="tela">
         <div class="conteiner-filtro-titulo">
             <div class="titulo">
-                Animes
+                Filmes
             </div>
             <div class="conteiner-filtro">
                 <div class="sort-dropdown">
@@ -34,70 +34,69 @@
                     <div class="conteudo-dropdown-tune">
                         <div class="checkbox">
                             <div class="conteiner-check" v-on:click="checkboxAcao()">
-                                <span class="material-icons filtro-acao"  v-if="checkAcao == false">
+                                <span class="material-icons filtro-acao" v-if="checkAcao == false">
                                     radio_button_unchecked
                                 </span>
-                                <span class="material-icons filtro-acao"  v-if="checkAcao == true">
+                                <span class="material-icons filtro-acao" v-if="checkAcao == true">
                                     radio_button_checked
                                 </span>
                                 Ação
                             </div>
                             <div class="conteiner-check" v-on:click="checkboxComedia()">
-                                <span class="material-icons filtro-comedia"  v-if="checkComedia == false">
+                                <span class="material-icons filtro-comedia" v-if="checkComedia == false">
                                     radio_button_unchecked
                                 </span>
-                                <span class="material-icons filtro-comedia"  v-if="checkComedia == true">
+                                <span class="material-icons filtro-comedia" v-if="checkComedia == true">
                                     radio_button_checked
                                 </span>
                                 Comédia
                             </div>
                             <div class="conteiner-check" v-on:click="checkboxRomance()">
-                                <span class="material-icons filtro-romance"  v-if="checkRomance == false">
+                                <span class="material-icons filtro-romance" v-if="checkRomance == false">
                                     radio_button_unchecked
                                 </span>
-                                <span class="material-icons filtro-romance"  v-if="checkRomance == true">
+                                <span class="material-icons filtro-romance" v-if="checkRomance == true">
                                     radio_button_checked
                                 </span>
                                 Romance
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
         <div class="conteiner-geral">
             <div class="fileira-cards">
-                <miniCards :imagem="require('@/assets/viland-saga.png')" />
-                <miniCards :imagem="require('@/assets/boku-no-hero.jpg')" />
-                <miniCards :imagem="require('@/assets/hells-paradise.jpg')" />
-                <miniCards :imagem="require('@/assets/mashle.jpg')" />
-                <miniCards :imagem="require('@/assets/one-piece.jpg')" />
+                <div class="info">
+                    <miniCards :imagem="require('@/assets/interstelar.jpg')" />
+                </div>
+                <miniCards :imagem="require('@/assets/espaço-entre-nos.jpg')" />
+                <miniCards :imagem="require('@/assets/vida-inseto.jpg')" />
+                <miniCards :imagem="require('@/assets/card-shang-chi.jpg')" />
+                <miniCards :imagem="require('@/assets/assim-na-terra.jpg')" />
             </div>
             <div class="fileira-cards">
-                <miniCards :imagem="require('@/assets/bleach.png')" />
-                <miniCards :imagem="require('@/assets/erased.png')" />
-                <miniCards :imagem="require('@/assets/great-pretender.png')" />
-                <miniCards :imagem="require('@/assets/one-punch-man.png')" />
-                <miniCards :imagem="require('@/assets/record-of-ragnarok.png')" />
+                <miniCards :imagem="require('@/assets/baleia.png')" />
+                <miniCards :imagem="require('@/assets/avatar.png')" />
+                <miniCards :imagem="require('@/assets/creed-3.jpg')" />
+                <miniCards :imagem="require('@/assets/enrolados.png')" />
+                <miniCards :imagem="require('@/assets/eternos.png')" />     
             </div>
             <div class="fileira-cards">
-                <miniCards :imagem="require('@/assets/classroom-elite.jpg')" />
-                <miniCards :imagem="require('@/assets/deamon-slayer.jpg')" />
-                <miniCards :imagem="require('@/assets/dragon-ball.jpg')" />
-                <miniCards :imagem="require('@/assets/full-metal.jpg')" />
-                <miniCards :imagem="require('@/assets/toradora.jpg')" />
+                <miniCards :imagem="require('@/assets/kingsman-origem.png')" />
+                <miniCards :imagem="require('@/assets/maquinas-mortais.jpg')" />
+                <miniCards :imagem="require('@/assets/panico-6.png')" />
+                <miniCards :imagem="require('@/assets/super-velozes.png')" />
+                <miniCards :imagem="require('@/assets/venon-2.png')" />               
             </div>
             <div class="fileira-cards">
-                <miniCards :imagem="require('@/assets/jujutsu-kaisen.jpg')" />
-                <miniCards :imagem="require('@/assets/sao.png')" />
-                <miniCards :imagem="require('@/assets/spy-family.jpg')" />
-                <miniCards :imagem="require('@/assets/hellsing.png')" />
-                <miniCards :imagem="require('@/assets/amor-999.png')" />
+                <miniCards :imagem="require('@/assets/esposa-mentira.jpg')" />
+                <miniCards :imagem="require('@/assets/homem-aranha-2.png')" />
+                <miniCards :imagem="require('@/assets/a-morte-do-demonio.png')" />
+                <miniCards :imagem="require('@/assets/no-aranhaverso.png')" />
+                <miniCards :imagem="require('@/assets/ghosted.png')" />
             </div>
         </div>
-
     </div>
 </template>
 <script>
@@ -106,7 +105,7 @@ export default {
     components: {
         miniCards
     },
-    data () {
+    data() {
         return {
             checkAcao: false,
             checkComedia: false,
@@ -114,7 +113,7 @@ export default {
         }
     },
     methods: {
-        checkboxAcao () {
+        checkboxAcao() {
             if (this.checkAcao == false) {
                 this.checkAcao = true
             } else {
@@ -128,7 +127,7 @@ export default {
                 this.checkRomance = false
             }
         },
-        checkboxComedia () {
+        checkboxComedia() {
             if (this.checkComedia == false) {
                 this.checkComedia = true
             } else {
@@ -142,7 +141,6 @@ export default {
 .tela {
     padding: 3vw;
 }
-
 .conteiner-geral {
     margin: 5vw;
     display: flex;
@@ -150,12 +148,10 @@ export default {
     gap: 20vh;
     align-items: center;
 }
-
 .fileira-cards {
     display: flex;
     gap: 3vw;
 }
-
 .conteiner-filtro-titulo {
     display: flex;
     color: #B2B2B2;
@@ -182,6 +178,7 @@ export default {
     width: 10vw;
     justify-content: center;
 }
+
 .sort:hover,
 .tune:hover {
     background-color: #B2B2B235;
@@ -228,10 +225,12 @@ export default {
     margin-left: 10vw;
     transition: 300ms;
 }
+
 .titulo:hover {
-   color:#f64348;
-   transition: 300ms;
+    color: #f64348;
+    transition: 300ms;
 }
+
 .checkbox {
     text-align: center;
     display: flex;
@@ -239,12 +238,15 @@ export default {
     gap: 1vh;
     padding-bottom: 1vh;
 }
-.filtro-acao, .filtro-comedia, .filtro-romance {
+
+.filtro-acao,
+.filtro-comedia,
+.filtro-romance {
     display: flex;
     align-items: flex-start;
-    padding-left:1vw;
+    padding-left: 1vw;
     cursor: pointer;
-    
+
 }
 .conteiner-check {
     display: flex;
@@ -253,6 +255,7 @@ export default {
     transition: 300ms;
     padding: 1vh 0;
 }
+
 .conteiner-check:hover {
     background-color: #121212;
     transition: 300ms;
