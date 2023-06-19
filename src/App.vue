@@ -22,7 +22,6 @@
           </router-link>
         </div>
       </div>
-
       <div class="escrita-cabecalho">
         Minha lista
       </div>
@@ -38,9 +37,9 @@
           account_circle
         </span>
         <div class="conteudo-dropdown">
-          <div class="escrita-dropdown">
+          <router-link to="/minha-conta" class="escrita-dropdown" >
             Conta
-          </div>
+          </router-link>
           <div class="escrita-dropdown">
             Configurações
           </div>
@@ -58,35 +57,55 @@
     </div>
 
     <router-view />
-
+    
     <div class="rodape">
-      <div class="contatos">
-        <div class="escrita-social-media">
+      <div class="conteiner-subtiluos">
+        <div class="subtitulos-rodape">
           Contatos
         </div>
-        <div class="social-media">
+        <div class="escrita-rodape">
           <img src="@/assets/instagram.svg">
-          <div class="escrita-social-media">
-            Instagram
-          </div>
+          Instagram
         </div>
-        <div class="social-media">
+        <div class="escrita-rodape">
           <img src="@/assets/facebook.svg">
-          <div class="escrita-social-media">
-            Facebook
-          </div>
+          Facebook
         </div>
-        <div class="social-media">
+        <div class="escrita-rodape">
           <img src="@/assets/twitter.svg">
-          <div class="escrita-social-media">
-            Twitter
-          </div>
+          Twitter
         </div>
-        <div class="social-media">
-          <img src="@/assets/github.svg">
-          <div class="escrita-social-media">
-            https://github.com/Guu0803
-          </div>
+        <div class="escrita-rodape">
+          <img src="@/assets/github.png">
+          https://github.com/Guu0803
+        </div>
+      </div>
+      <div class="conteiner-subtiluos">
+        <div class="subtitulos-rodape">
+          Nome do site
+        </div>
+        <div class="teste-gratis">
+          Experimente Grátis
+        </div>
+        <div class="escrita-rodape">
+          Sobre
+        </div>
+        <div class="escrita-rodape">
+          Ajuda
+        </div>
+        <div class="escrita-rodape">
+          Termos de Uso / Política de Privacidade
+        </div>
+      </div>
+      <div class="conteiner-subtiluos">
+        <div class="subtitulos-rodape">
+          Conta
+        </div>
+        <div class="escrita-rodape">
+          Criar Conta
+        </div>
+        <div class="escrita-rodape">
+          Login
         </div>
       </div>
     </div>
@@ -182,21 +201,48 @@
   margin-top: 10vw;
   padding: 3vw 0 3vw 4vw;
   width: 99vw;
-  background-image: linear-gradient(to bottom,#060606,#121212,#1f1f1f, #2c2c2c,#393939,#454545,#5f5f5f );
-  height: 40vh;
+  background-image: linear-gradient(to bottom, #060606, #121212, #1f1f1f, #2c2c2c, #393939, #454545, #5f5f5f);
+  height: 30vh;
+  display: flex;
+  justify-content: space-around;
 }
 
-.social-media {
+.escrita-rodape {
   display: flex;
   align-items: center;
-}
-
-.escrita-social-media {
+  font-size: 2vh;
   color: #B2B2B2;
   cursor: pointer;
+  width: fit-content;
 }
-.escrita-social-media:hover {
-  color:#f64348 ;
+
+.conteiner-subtiluos {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.escrita-rodape:hover {
+  color: #f64348;
+}
+
+.subtitulos-rodape {
+  font-size: 3vh;
+  color: white;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.subtitulos-rodape:hover {
+  color: #f64348;
+}
+.teste-gratis {
+  cursor: pointer;
+  color: white;
+  font-size: 2.5vh;
+}
+.teste-gratis:hover {
+  color: #f64348;
 }
 input {
   border-radius: 10px;

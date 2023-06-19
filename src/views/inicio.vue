@@ -1,7 +1,7 @@
 <template>
     <div class="tela">
         <div class="carrosel">
-            <div class="botao-volta" v-on:click="passarAnterior()">
+            <div class="botao-volta" v-on:click="passarAnterior()" >
                 &#10094;
             </div>
             <banners :imagemBanner="require('@/assets/the-last-of-us.jpg')" tituloBanner="The Last of Us" sinopseBanner="Vinte anos após um fungo que transforma os seres humanos em seres canibalísticos agressivos devastar o mundo, 
@@ -256,7 +256,7 @@ export default {
                 this.animes--
             }
         }
-    }
+    },
 }
 </script>
 <style scoped>

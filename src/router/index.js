@@ -4,6 +4,7 @@ import Login from '@/views/Login.vue'
 import capa from '@/views/capa.vue'
 import categoria from '@/views/Categoria.vue'
 import Inicio from '@/views/inicio.vue'
+import MinhaPagina from '@/views/MinhaConta.vue'
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: '/categoria/:type',
     name: 'pagina-categoria',
     component: categoria
+  },
+  {
+    path: '/minha-conta',
+    name: "minha-conta",
+    component: MinhaPagina
   }
 ]
 
