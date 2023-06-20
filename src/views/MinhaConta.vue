@@ -11,14 +11,11 @@
                 <div class="sub-titulos" v-on:click="preferencia()">
                     Preferências
                 </div>
-                <div class="sub-titulos">
+                <div class="sub-titulos" v-on:click="alteraçoes()">
                     Alterar E-mail / Alterar Senha
                 </div>
-                <div class="sub-titulos">
-                    Gerenciamento de Dispositivos
-                </div>
             </div>
-            <div class="pagamentos">
+            <div class="pagamentos" v-on:click="pagamentos()">
                 <div class="titulo">
                     Pagamentos
                 </div>
@@ -138,40 +135,86 @@
                     </div>
                 </div>
                 <div class="conteudo">
-                    <span class="material-icons check-on" v-if="check==true" v-on:click="checado()">
+                    <span class="material-icons check-on" v-if="check == true" v-on:click="checado()">
                         toggle_on
                     </span>
-                    <span class="material-icons check-off" v-if="check==false" v-on:click="naoChecado()">
+                    <span class="material-icons check-off" v-if="check == false" v-on:click="naoChecado()">
                         toggle_off
                     </span>
-                     Exibir conteúdo adulto
-                    
+                    Exibir conteúdo adulto
+
                 </div>
             </div>
-            <!-- <div class="alteracoes">
-                <div>
-                    Alterar E-mail:
-                    <input type="email">
+            <!-- Fim -->
+
+            <!-- Conteiner de Alterações -->
+            <div class="conteiner-sub-titulos" v-if="alteracoesConteiner == true">
+                Alterar E-mail / Senha
+                <div class="descricao">
+                    Altere o e-mail e senha para fazer login
                 </div>
-                <div>
-                    Alterar Senha:
-                    <input type="password">
+                <div class="conteiner-input">
+                    Alterar E-mail
+                    <div class="alterar-input">
+                        E-mail atual:
+                        <input type="email">
+                        Novo E-mail:
+                        <input type="email">
+                        <button class="botao-input">
+                            Confirmar
+                        </button>
+                    </div>
+                    Alterar senha
+                    <div class="alterar-input">
+                        Senha atual:
+                        <input type="password">
+                        Nova senha:
+                        <input type="password">
+                        <button class="botao-input">
+                            Confirmar
+                        </button>
+                    </div>
                 </div>
             </div>
-            <div class="gereciamento">
-                dispositivos logados
-            </div>
-            <div class="historico=pagamentos">
-                <div>
-                    Último pagamento <br>
-                    Data: 19/06/2023
+            <!-- Fim -->
+
+            <!-- Histórico de pagamento -->
+            <div class="conteiner-sub-titulos" v-if="pagamentosConteiner == true">
+                Histórico de pagamento
+                <div class="descricao">
+                    Detalhes de cobramça
                 </div>
-                <div>
-                    Próximo pagamento <br>
-                    Data: 19/07/2023
+                <div class="conteiner-pagamentos">
+                    <div class="titulo-pagamentos">
+                        Última cobrança:
+                        <div class="escrita-pagamentos">
+                            19/06/2023
+                        </div>
+                    </div>
+                    <div class="titulo-pagamentos">
+                        Sua próxima cobrança:
+                        <div  class="escrita-pagamentos">
+                            19/07/2023
+                        </div>
+                    </div>
+                    <div class="titulo-pagamentos">
+                        Valor:
+                        <div  class="escrita-pagamentos">
+                            R$25,90
+                        </div>
+                    </div>
+                    <div class="titulo-pagamentos">
+                        Informações do cartão:
+                        <div  class="escrita-pagamentos">
+                            MasterCard final 7777
+                        </div>
+                    </div>
                 </div>
+
             </div>
-            <div class="metodo-pagamento">
+            <!-- Fim -->
+            
+            <!-- <div class="metodo-pagamento">
                 <div>
                     Cartão de Crédito
                 </div>
@@ -188,22 +231,46 @@ export default {
         return {
             assinaturaConteiner: false,
             preferenciaConteiner: false,
+            alteracoesConteiner: false,
+            pagamentosConteiner:false,
             idioma: false,
             audio: false,
             legenda: false,
             check: false
+
         }
     },
     methods: {
         assinatura() {
             if (this.assinaturaConteiner == false) {
                 this.assinaturaConteiner = true
+                this.alteracoesConteiner = false
+                this.preferenciaConteiner = false
+                this.pagamentosConteiner = false
             }
         },
         preferencia() {
             if (this.preferenciaConteiner == false) {
                 this.preferenciaConteiner = true
                 this.assinaturaConteiner = false
+                this.alteracoesConteiner = false
+                this.pagamentosConteiner = false
+            }
+        },
+        alteraçoes() {
+            if (this.alteracoesConteiner == false) {
+                this.alteracoesConteiner = true
+                this.assinaturaConteiner = false
+                this.pagamentosConteiner = false
+                this.preferenciaConteiner = false
+            }
+        },
+        pagamentos() {
+            if (this.pagamentosConteiner == false) {
+                this.pagamentosConteiner = true
+                this.assinaturaConteiner = false
+                this.preferenciaConteiner = false
+                this.alteracoesConteiner = false
             }
         },
         clicouIdioma() {
@@ -242,11 +309,11 @@ export default {
                 return "display:block;"
             }
         },
-        checado(){
+        checado() {
             this.check = false
         },
         naoChecado() {
-            this.check =  true
+            this.check = true
         }
     }
 }
@@ -389,20 +456,72 @@ button:hover {
     color: #e8e8e8;
     margin: 1vh 0;
 }
+
 .check-on {
     font-size: 7vh;
     color: #f64348;
     cursor: pointer;
 }
+
 .check-off {
     font-size: 7vh;
     color: #B2B2B2;
     cursor: pointer;
 }
+
 .conteudo {
     display: flex;
     align-items: center;
     gap: 1vw;
     font-size: 3vh;
+}
+
+.alterar-input {
+    font-size: 2.5vh;
+    color: #B2B2B2;
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    align-items: center;
+}
+
+.conteiner-input {
+    margin: 3vh 0 1vh 0;
+    font-size: 3.5vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    justify-content: center;
+}
+
+input[type="email"],
+input[type="password"] {
+    background-color: #1f1f1f;
+    border: none;
+    padding: 1vh;
+    border-radius: 10px;
+    margin: 1vh 0;
+    width: 20vw;
+}
+
+.botao-input {
+    width: 15vw;
+}
+
+.conteiner-pagamentos {
+    font-size: 2.5vh;
+    color: #B2B2B2;
+    margin-top: 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+.titulo-pagamentos {
+    display: flex;
+    gap: 1vh;
+    color: #e8e8e8;
+}
+.escrita-pagamentos {
+    color: #B2B2B2;
 }
 </style>
