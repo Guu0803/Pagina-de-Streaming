@@ -5,6 +5,7 @@ import capa from '@/views/capa.vue'
 import categoria from '@/views/Categoria.vue'
 import Inicio from '@/views/inicio.vue'
 import MinhaPagina from '@/views/MinhaConta.vue'
+import Perfil from '@/views/Perfil.vue'
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: '/minha-conta',
     name: "minha-conta",
     component: MinhaPagina
+  },
+  {
+    path: '/meu-perfil',
+    name: 'meu-perfil',
+    component: Perfil
   }
 ]
 

@@ -1,5 +1,6 @@
 <template>
     <div class="tela">
+        <!-- Banner principal -->
         <div class="carrosel">
             <div class="botao-volta" v-on:click="passarAnterior()" >
                 &#10094;
@@ -23,6 +24,9 @@
                 &#10095;
             </div>
         </div>
+        <!-- Fim -->
+
+        <!-- Carrosel Series  -->
         <div class="titulo-fileiras">
             <router-link to="/categoria/series/" class="link-titulo">
                 Séries
@@ -62,6 +66,9 @@
                     keyboard_arrow_right
                 </span>
         </div>
+        <!-- Fim -->
+
+        <!-- Carrosel em Alta -->
         <div class="titulo-fileiras link-titulo">
             Em alta
         </div>
@@ -85,6 +92,9 @@
                 keyboard_arrow_right
             </span>
         </div>
+        <!-- Fim -->
+        
+        <!-- Carrosel Filmes -->
         <div class="titulo-fileiras">
             <router-link to="/categoria/filmes/" class="link-titulo">
                 Filmes
@@ -97,12 +107,12 @@
                 keyboard_arrow_left
             </span>
             <div class="fileira-cards" v-if="filmes == 1">
-                <miniCards :imagem="require('@/assets/interstelar.jpg')" />
-                <miniCards :imagem="require('@/assets/espaço-entre-nos.jpg')" />
-                <miniCards :imagem="require('@/assets/vida-inseto.jpg')" />
-                <miniCards :imagem="require('@/assets/card-shang-chi.jpg')" />
-                <miniCards :imagem="require('@/assets/assim-na-terra.jpg')" />
-                <miniCards :imagem="require('@/assets/esposa-mentira.jpg')" />
+                <miniCards :imagem="require('@/assets/interstelar.jpg')" :scale="true" />
+                <miniCards :imagem="require('@/assets/espaço-entre-nos.jpg')" :scale="true"/>
+                <miniCards :imagem="require('@/assets/vida-inseto.jpg')" :scale="true" />
+                <miniCards :imagem="require('@/assets/card-shang-chi.jpg')" :scale="true"/>
+                <miniCards :imagem="require('@/assets/assim-na-terra.jpg')" :scale="true"/>
+                <miniCards :imagem="require('@/assets/esposa-mentira.jpg')" :scale="true"/>
             </div>
             <div class="fileira-cards" v-if="filmes == 2">
                 <miniCards :imagem="require('@/assets/baleia.png')" />
@@ -124,6 +134,9 @@
                 keyboard_arrow_right
             </span>
         </div>
+        <!-- Fim -->
+
+        <!-- Carrosel animes -->
         <div class="titulo-fileiras">
             <router-link to="/categoria/animes/" class="link-titulo">
                 Animes
@@ -163,6 +176,7 @@
                 keyboard_arrow_right
             </span>
         </div>
+        <!-- FIm -->
     </div>
 </template>
 <script>
@@ -352,7 +366,7 @@ export default {
 }
 
 .seta {
-    font-size: 7vh;
+    font-size: 5vh;
     cursor: pointer;
     transition: 300ms;
 }

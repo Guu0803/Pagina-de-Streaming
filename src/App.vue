@@ -40,12 +40,9 @@
           <router-link to="/minha-conta" class="escrita-dropdown" >
             Conta
           </router-link>
-          <div class="escrita-dropdown">
-            Configurações
-          </div>
-          <div class="escrita-dropdown">
-            Editar perfil
-          </div>
+          <router-link to="/meu-perfil" class="escrita-dropdown" >
+            Perfil
+          </router-link>
           <div class="escrita-dropdown">
             Ajuda
           </div>
@@ -198,9 +195,9 @@
 }
 
 .rodape {
-  margin-top: 10vw;
-  padding: 3vw 0 3vw 4vw;
-  width: 99vw;
+  margin-top: 5vw;
+  padding: 2vw 0;
+  width: 100%;
   background-image: linear-gradient(to bottom, #060606, #121212, #1f1f1f, #2c2c2c, #393939, #454545, #5f5f5f);
   height: 30vh;
   display: flex;

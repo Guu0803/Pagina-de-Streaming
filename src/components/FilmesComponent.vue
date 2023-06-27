@@ -67,34 +67,32 @@
         </div>
         <div class="conteiner-geral">
             <div class="fileira-cards">
-                <div class="info">
-                    <miniCards :imagem="require('@/assets/interstelar.jpg')" />
-                </div>
-                <miniCards :imagem="require('@/assets/espaço-entre-nos.jpg')" />
-                <miniCards :imagem="require('@/assets/vida-inseto.jpg')" />
-                <miniCards :imagem="require('@/assets/card-shang-chi.jpg')" />
-                <miniCards :imagem="require('@/assets/assim-na-terra.jpg')" />
+                <miniCards :imagem="require('@/assets/interstelar.jpg')" nome="Interstelar"/>
+                <miniCards :imagem="require('@/assets/espaço-entre-nos.jpg')" nome="Espaço Entre Nós"/>
+                <miniCards :imagem="require('@/assets/vida-inseto.jpg')" nome="Vida de Inseto"/>
+                <miniCards :imagem="require('@/assets/card-shang-chi.jpg')" nome="Shang-Chi: A Lenda dos Dez Anéis"/>
+                <miniCards :imagem="require('@/assets/assim-na-terra.jpg')" nome="Assim na Terra como no Inferno"/>
             </div>
             <div class="fileira-cards">
-                <miniCards :imagem="require('@/assets/baleia.png')" />
-                <miniCards :imagem="require('@/assets/avatar.png')" />
-                <miniCards :imagem="require('@/assets/creed-3.jpg')" />
-                <miniCards :imagem="require('@/assets/enrolados.png')" />
-                <miniCards :imagem="require('@/assets/eternos.png')" />     
+                <miniCards :imagem="require('@/assets/baleia.png')" nome="A Baleia"/>
+                <miniCards :imagem="require('@/assets/avatar.png')" nome="Avatar"/>
+                <miniCards :imagem="require('@/assets/creed-3.jpg')" nome="Creed 3" />
+                <miniCards :imagem="require('@/assets/enrolados.png')" nome="Enrolados"/>
+                <miniCards :imagem="require('@/assets/eternos.png')" nome="Eternos"/>     
             </div>
             <div class="fileira-cards">
-                <miniCards :imagem="require('@/assets/kingsman-origem.png')" />
-                <miniCards :imagem="require('@/assets/maquinas-mortais.jpg')" />
-                <miniCards :imagem="require('@/assets/panico-6.png')" />
-                <miniCards :imagem="require('@/assets/super-velozes.png')" />
-                <miniCards :imagem="require('@/assets/venon-2.png')" />               
+                <miniCards :imagem="require('@/assets/kingsman-origem.png')" nome="Kingsman: A Origem" />
+                <miniCards :imagem="require('@/assets/maquinas-mortais.jpg')" nome="Máquinas Mortais" />
+                <miniCards :imagem="require('@/assets/panico-6.png')" nome="Pânico 6"/>
+                <miniCards :imagem="require('@/assets/super-velozes.png')" nome="Super Velozes, Mega Furiosos" />
+                <miniCards :imagem="require('@/assets/venon-2.png')" nome="Venom: Tempo de Carnificina" />               
             </div>
             <div class="fileira-cards">
-                <miniCards :imagem="require('@/assets/esposa-mentira.jpg')" />
-                <miniCards :imagem="require('@/assets/homem-aranha-2.png')" />
-                <miniCards :imagem="require('@/assets/a-morte-do-demonio.png')" />
-                <miniCards :imagem="require('@/assets/no-aranhaverso.png')" />
-                <miniCards :imagem="require('@/assets/ghosted.png')" />
+                <miniCards :imagem="require('@/assets/esposa-mentira.jpg')" nome="Esposa de Mentirinha"/>
+                <miniCards :imagem="require('@/assets/homem-aranha-2.png')" nome="Espetacular Homem-Aranha 2"/>
+                <miniCards :imagem="require('@/assets/a-morte-do-demonio.png')" nome="A Morte do Demônio: A Ascensão"/>
+                <miniCards :imagem="require('@/assets/no-aranhaverso.png')" nome="Homem Aranha: No Aranhaverso"/>
+                <miniCards :imagem="require('@/assets/ghosted.png')" nome="Ghoted: Sem Resposta"/>
             </div>
         </div>
     </div>

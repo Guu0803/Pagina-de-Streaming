@@ -1,5 +1,6 @@
 <template>
     <div class="tela">
+        <!-- Conteiner Esquerdo -->
         <div class="conteiner-esquerdo">
             <div class="geral">
                 <div class="titulo">
@@ -11,25 +12,29 @@
                 <div class="sub-titulos" v-on:click="preferencia()">
                     Preferências
                 </div>
-                <div class="sub-titulos" v-on:click="alteraçoes()">
-                    Alterar E-mail / Alterar Senha
+                <div class="sub-titulos" v-on:click="alterarEmail()">
+                    Alterar E-mail
                 </div>
-            </div>
-            <div class="pagamentos" v-on:click="pagamentos()">
+                <div class="sub-titulos" v-on:click="alterarSenha()">
+                    Alterar Senha
+                </div>
                 <div class="titulo">
                     Pagamentos
                 </div>
-                <div class="sub-titulos">
+                <div class="sub-titulos" v-on:click="pagamentos()">
                     Histórico de Pagamentos
                 </div>
-                <div class="sub-titulos">
+                <div class="sub-titulos" v-on:click="metodosPagamentos()">
                     Métodos de Pagamento
                 </div>
             </div>
         </div>
+        <!-- Fim -->
+
+        <!-- Conteiner direito -->
         <div class="conteiner-direito">
             <!-- Conteiner de Dados da Assinatura -->
-            <div class="conteiner-sub-titulos" v-if="assinaturaConteiner == true">
+            <div class="conteiner-sub-titulos" v-if="tab =='assinatura'">
                 Detalhes da assinatura
                 <div class="descricao">
                     Gerencie seu plano de assinatura
@@ -54,7 +59,7 @@
             <!-- fim -->
 
             <!-- Conteiner de Preferencias  -->
-            <div class="conteiner-sub-titulos" v-if="preferenciaConteiner == true">
+            <div class="conteiner-sub-titulos" v-if="tab == 'preferencia'">
                 Preferências
                 <div class="descricao">
                     Configuraçõa de idioma de exibição e vídeo
@@ -147,39 +152,44 @@
             </div>
             <!-- Fim -->
 
-            <!-- Conteiner de Alterações -->
-            <div class="conteiner-sub-titulos" v-if="alteracoesConteiner == true">
-                Alterar E-mail / Senha
+            <!-- Conteiner de Email -->
+            <div class="conteiner-sub-titulos" v-if="tab == 'email'">
+                Alterar E-mail
                 <div class="descricao">
                     Altere o e-mail e senha para fazer login
                 </div>
-                <div class="conteiner-input">
-                    Alterar E-mail
-                    <div class="alterar-input">
-                        E-mail atual:
-                        <input type="email">
-                        Novo E-mail:
-                        <input type="email">
-                        <button class="botao-input">
-                            Confirmar
-                        </button>
-                    </div>
-                    Alterar senha
-                    <div class="alterar-input">
-                        Senha atual:
-                        <input type="password">
-                        Nova senha:
-                        <input type="password">
-                        <button class="botao-input">
-                            Confirmar
-                        </button>
-                    </div>
+                <div class="alterar-input">
+                    E-mail atual:
+                    <input type="email">
+                    Novo E-mail:
+                    <input type="email">
+                    <button class="botao-input">
+                        Confirmar
+                    </button>
+                </div>
+            </div>
+            <!-- Fim -->
+
+            <!-- Conteiner de senha-->
+            <div class="conteiner-sub-titulos" v-if="tab == 'senha'">
+                Alterar senha
+                <div class="descricao">
+                    Alterar senha para fazer login
+                </div>
+                <div class="alterar-input">
+                    Senha atual:
+                    <input type="password">
+                    Nova senha:
+                    <input type="password">
+                    <button class="botao-input">
+                        Confirmar
+                    </button>
                 </div>
             </div>
             <!-- Fim -->
 
             <!-- Histórico de pagamento -->
-            <div class="conteiner-sub-titulos" v-if="pagamentosConteiner == true">
+            <div class="conteiner-sub-titulos" v-if="tab == 'pagamentos'">
                 Histórico de pagamento
                 <div class="descricao">
                     Detalhes de cobramça
@@ -193,85 +203,80 @@
                     </div>
                     <div class="titulo-pagamentos">
                         Sua próxima cobrança:
-                        <div  class="escrita-pagamentos">
+                        <div class="escrita-pagamentos">
                             19/07/2023
                         </div>
                     </div>
                     <div class="titulo-pagamentos">
                         Valor:
-                        <div  class="escrita-pagamentos">
+                        <div class="escrita-pagamentos">
                             R$25,90
                         </div>
                     </div>
                     <div class="titulo-pagamentos">
                         Informações do cartão:
-                        <div  class="escrita-pagamentos">
+                        <div class="escrita-pagamentos">
                             MasterCard final 7777
                         </div>
                     </div>
                 </div>
-
             </div>
             <!-- Fim -->
-            
-            <!-- <div class="metodo-pagamento">
-                <div>
+
+            <!-- Forma de pagamentos -->
+            <div class="conteiner-sub-titulos" v-if="tab =='metodos'">
+                Métodos de pagamento
+                <div class="descricao">
+                    Edite os dados de pagamento ou
+                    adicione uma forma de pagamento alternativa
+                </div>
+                <div class="credito">
                     Cartão de Crédito
+                    <div class="cartao">
+                        <img src="@/assets/mastercard.svg"> **** **** **** 7777
+                        <div class="editar">
+                            Editar
+                        </div>
+                    </div>
+                    <button>
+                        Adicionar forma de pagamento
+                    </button>
                 </div>
-                <div>
-                    Cartão de Débito
-                </div>
-            </div> -->
+            </div>
+            <!-- Fim -->
         </div>
+        <!-- Fim -->
     </div>
 </template>
 <script>
 export default {
     data() {
         return {
-            assinaturaConteiner: false,
-            preferenciaConteiner: false,
-            alteracoesConteiner: false,
-            pagamentosConteiner:false,
+            tab: "assinatura",
             idioma: false,
             audio: false,
             legenda: false,
             check: false
-
         }
     },
     methods: {
         assinatura() {
-            if (this.assinaturaConteiner == false) {
-                this.assinaturaConteiner = true
-                this.alteracoesConteiner = false
-                this.preferenciaConteiner = false
-                this.pagamentosConteiner = false
-            }
+            this.tab = "assinatura"
         },
         preferencia() {
-            if (this.preferenciaConteiner == false) {
-                this.preferenciaConteiner = true
-                this.assinaturaConteiner = false
-                this.alteracoesConteiner = false
-                this.pagamentosConteiner = false
-            }
+            this.tab = "preferencia"
         },
-        alteraçoes() {
-            if (this.alteracoesConteiner == false) {
-                this.alteracoesConteiner = true
-                this.assinaturaConteiner = false
-                this.pagamentosConteiner = false
-                this.preferenciaConteiner = false
-            }
+        alterarEmail() {
+          this.tab = "email"
+        },
+        alterarSenha() {
+           this.tab =  "senha"
         },
         pagamentos() {
-            if (this.pagamentosConteiner == false) {
-                this.pagamentosConteiner = true
-                this.assinaturaConteiner = false
-                this.preferenciaConteiner = false
-                this.alteracoesConteiner = false
-            }
+            this.tab =  "pagamentos"
+        },
+        metodosPagamentos() {
+            this.tab = "metodos"
         },
         clicouIdioma() {
             if (this.idioma == false) {
@@ -321,9 +326,12 @@ export default {
 <style scoped>
 .tela {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     letter-spacing: 1.5px;
     align-items: center;
+    height: 80vh;
+    width: 100%;
+    gap: 5vw;
 }
 
 .conteiner-esquerdo {
@@ -331,19 +339,18 @@ export default {
     flex-direction: column;
     gap: 1vw;
     color: #B2B2B2;
+    border-radius: 10px;
+    background-color: #353535;
+    padding: 0 1vw 1vw 1vw;
 }
-
-/* .conteiner-direito {
-    border: 1px solid red;
-} */
 
 .titulo {
     font-size: 4vh;
-    margin-bottom: 2vw;
+    color: #e8e8e8;
+    margin: 1vw;
 }
 
-.geral,
-.pagamentos {
+.geral {
     text-align: center;
     padding: 1vh;
 }
@@ -483,15 +490,7 @@ button:hover {
     flex-direction: column;
     width: 25vw;
     align-items: center;
-}
-
-.conteiner-input {
-    margin: 3vh 0 1vh 0;
-    font-size: 3.5vh;
-    display: flex;
-    flex-direction: column;
-    gap: 2vw;
-    justify-content: center;
+    margin: 2vw 0;
 }
 
 input[type="email"],
@@ -516,12 +515,40 @@ input[type="password"] {
     flex-direction: column;
     gap: 2vh;
 }
+
 .titulo-pagamentos {
     display: flex;
     gap: 1vh;
     color: #e8e8e8;
 }
+
 .escrita-pagamentos {
     color: #B2B2B2;
+}
+
+.credito {
+    font-size: 3vh;
+    margin: 2vw 0;
+}
+
+.cartao {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    color: #B2B2B2;
+    margin: 1vw 0;
+}
+
+.editar {
+    color: #B2B2B2;
+    font-size: 2vh;
+    margin-left: 2vw;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.editar:hover {
+    color: #f64348;
+    transition: 300ms;
 }
 </style>

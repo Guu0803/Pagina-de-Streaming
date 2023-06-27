@@ -67,32 +67,32 @@
         </div>
         <div class="conteiner-geral">
             <div class="fileira-cards">
-                <miniCards :imagem="require('@/assets/the-witcher.jpg')" />
-                <miniCards :imagem="require('@/assets/casa-de-papel.jpg')" />
-                <miniCards :imagem="require('@/assets/house.jpg')" />
-                <miniCards :imagem="require('@/assets/mr-robot.jpg')" />
-                <miniCards :imagem="require('@/assets/prison-break.jpg')" />
+                <miniCards :imagem="require('@/assets/the-witcher.jpg')" nome="The Withcer" />
+                <miniCards :imagem="require('@/assets/casa-de-papel.jpg')" nome="La Casa de Papel"/>
+                <miniCards :imagem="require('@/assets/house.jpg')" nome="House"/>
+                <miniCards :imagem="require('@/assets/mr-robot.jpg')" nome="Mr. Robot" />
+                <miniCards :imagem="require('@/assets/prison-break.jpg')" nome="Prison Break" />
             </div>
             <div class="fileira-cards">
-                <miniCards :imagem="require('@/assets/citadel.jpg')" />
-                <miniCards :imagem="require('@/assets/strain.png')" />
-                <miniCards :imagem="require('@/assets/moon-night.jpg')" />
-                <miniCards :imagem="require('@/assets/fauda.jpg')" />
-                <miniCards :imagem="require('@/assets/bodyguard.jpg')" />
+                <miniCards :imagem="require('@/assets/citadel.jpg')" nome="Citadel" />
+                <miniCards :imagem="require('@/assets/strain.png')" nome="Strain"/>
+                <miniCards :imagem="require('@/assets/moon-night.jpg')" nome="Cavaleiro da Lua"/>
+                <miniCards :imagem="require('@/assets/fauda.jpg')" nome="Fauda"/>
+                <miniCards :imagem="require('@/assets/bodyguard.jpg')" nome="Segurança em jogo" />
             </div>
             <div class="fileira-cards">
-                <miniCards :imagem="require('@/assets/halo.png')" />
-                <miniCards :imagem="require('@/assets/peaky-blinders.png')" />
-                <miniCards :imagem="require('@/assets/ted-lasso.png')" />
-                <miniCards :imagem="require('@/assets/sweet-tooth.png')" />
-                <miniCards :imagem="require('@/assets/loki.png')" />
+                <miniCards :imagem="require('@/assets/halo.png')" nome="Halo"/>
+                <miniCards :imagem="require('@/assets/peaky-blinders.png')" nome="Peaky Blinders"/>
+                <miniCards :imagem="require('@/assets/ted-lasso.png')" nome="Ted Lasso"/>
+                <miniCards :imagem="require('@/assets/sweet-tooth.png')" nome="Sweet Tooth"/>
+                <miniCards :imagem="require('@/assets/loki.png')" nome="Loki"/>
             </div>
             <div class="fileira-cards">
-                <miniCards :imagem="require('@/assets/walking-dead.png')" />
-                <miniCards :imagem="require('@/assets/origem.jpg')" />
-                <miniCards :imagem="require('@/assets/stranger-things.jpg')" />
-                <miniCards :imagem="require('@/assets/what-if.png')" />
-                <miniCards :imagem="require('@/assets/roda-do-tempo.png')" />
+                <miniCards :imagem="require('@/assets/walking-dead.png')" nome="Walking Dead" />
+                <miniCards :imagem="require('@/assets/origem.jpg')" nome="Origem"/>
+                <miniCards :imagem="require('@/assets/stranger-things.jpg')" nome="Stranger Things" />
+                <miniCards :imagem="require('@/assets/what-if.png')" nome="What if...?"/>
+                <miniCards :imagem="require('@/assets/roda-do-tempo.png')" nome="Roda do Tempo" />
             </div>
         </div>
     </div>
@@ -111,6 +111,7 @@ export default {
         }
     },
     methods: {
+        // Essa function está mudando o checkbox pois usei uma img, entao ele esta trocando da img checada para nao checada
         checkboxAcao() {
             if (this.checkAcao == false) {
                 this.checkAcao = true
@@ -132,6 +133,7 @@ export default {
                 this.checkComedia = false
             }
         }
+        // Fim
     }
 }
 </script>
@@ -139,6 +141,7 @@ export default {
 .tela {
     padding: 3vw;
 }
+
 .conteiner-geral {
     margin: 5vw;
     display: flex;
@@ -146,10 +149,24 @@ export default {
     gap: 20vh;
     align-items: center;
 }
+
 .fileira-cards {
     display: flex;
     gap: 3vw;
 }
+
+.info-card {
+    display: flex;
+    margin-top: 2vw;
+    color: #B2B2B2;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.info-card:hover {
+    color: #f64348;
+}
+
 .conteiner-filtro-titulo {
     display: flex;
     color: #B2B2B2;
@@ -246,6 +263,7 @@ export default {
     cursor: pointer;
 
 }
+
 .conteiner-check {
     display: flex;
     gap: 1vh;
