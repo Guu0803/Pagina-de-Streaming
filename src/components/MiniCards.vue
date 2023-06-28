@@ -1,33 +1,35 @@
 <template>
     <div class="conteiner-card">
-        <!-- :class metodo que esta verificando na pagina inicial se e verdadeiro ou nao a condicao e retornando uma classe -->
-        <img :src="imagem" class="card" :class="checarScale()">
-        <!-- Fim -->
+        <div class="div-teste">
+            <!-- :class metodo que esta verificando na pagina inicial se é verdadeiro ou não a condição e retornando uma classe -->
+            <img :src="imagem" class="card" :class="checarScale()">
+            <!-- Fim -->
+            <div v-if="sinopse == true" class="teste">
+                <div class="titulo-sinopse">
+                    {{ nome }}
+                </div>
+                <div class="classificacao">
+                    {{ classificacao }}
+                    <span class="material-icons estrela">
+                        star_rate
+                    </span>
+                </div>
+                {{ conteudoSinopse }}
+            </div>
+        </div>
         <div class="info-card">
             {{ nome }}
-        </div>
-        <div v-if="sinopse == true" class="teste">
-            <div class="titulo-sinopse">
-                {{ nome }}
-            </div>
-            <div class="classificacao">
-                {{ classificacao }}
-                <span class="material-icons estrela">
-                    star_rate
-                </span>
-            </div>
-            {{ conteudoSinopse }}
         </div>
     </div>
 </template>
 <script>
 export default {
     name: "miniCardsComponent",
-    props: ["imagem", "nome", "sinopse", "conteudoSinopse", "classificacao","scale"],
+    props: ["imagem", "nome", "sinopse", "conteudoSinopse", "classificacao", "scale"],
     methods: {
-        checarScale () {
-            if(this.scale == true) {
-            return "card-scale"
+        checarScale() {
+            if (this.scale == true) {
+                return "card-scale"
             }
         }
     }
@@ -38,20 +40,23 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+}
+.div-teste {
     position: relative;
 }
-
 .card {
     height: 40vh;
     width: 14vw;
     border-radius: 10px;
     box-shadow: 1.5vh 1.5vh 2vh black, -0.5vh -0.5vh 2vh #343434;
     cursor: pointer;
-    transition: 300ms;
+    transition: 300ms ease-in-out;
 }
-.card-scale:hover  {
+
+.card-scale:hover {
     scale: 1.2;
-    transition: 300ms;
+    transition: 300ms ease-in-out;
 }
 
 .info-card {
@@ -61,7 +66,6 @@ export default {
     cursor: pointer;
     width: fit-content;
     transition: 300ms;
-
 }
 
 .info-card:hover {
@@ -69,49 +73,53 @@ export default {
     transition: 300ms;
 }
 
-.conteiner-card:hover>.info-card {
-    color: #f64348;
-    transition: 300ms;
-}
 
 
 .teste {
     visibility: hidden;
-    transition: 100ms;
+    transition: 100ms ease-in-out;
     display: flex;
+    text-align: center;
+    padding: 10% 0 ;
     flex-direction: column;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.8);
     top: 0;
-    height: 100%;
-    max-width: 100%;
+    height: 85%;
+    width: 100%;
     border-radius: 10px;
     color: #e8e8e8;
-    text-align: center;
-    padding: 1vh;
     cursor: pointer;
-
+    font-size: 2vh;
 }
 
-.conteiner-card:hover>.teste {
+.div-teste:hover>.teste {
     visibility: visible;
-    transition: 100ms;
-    
+    transition: 100ms ease-in-out;
 }
+
+/* .div-teste:hover ~ .info-card {
+    visibility: hidden;
+    transition: 100ms ease-in-out;
+} */
 
 .titulo-sinopse {
-    color: #e8e8e8;
+    color: #f64348;
+    font-size: 2.5vh;
 }
 
 .classificacao {
     display: flex;
     justify-content: center;
-    margin: 1vw 0;
+    align-items: center;
+    margin: 1vh 0;
 }
 
 .estrela {
     color: #DAA520;
-}</style>
+    font-size: 3vh;
+}
+</style>
 
 
 

@@ -6,19 +6,24 @@
                     person
                 </span>
                 Gustavo
-                <span class="material-icons editar" :style="editarAparece()">
-                    edit
-                </span>
+                <label for="img" :style="editarAparece()" class="label">
+                    <span class="material-icons editar">
+                        edit
+                    </span>
+                </label>
+                <input type="file" style="display:none" id="img">
             </div>
             <div class="perfil">
                 <span class="material-icons icone-perfil">
                     person_add
                 </span>
                 Novo perfil
-                <span class="material-icons editar" :style="editarAparece()">
-                    edit
-                </span>
-                
+                <label for="img2" :style="editarAparece()" class="label">
+                    <span class="material-icons editar">
+                        edit
+                    </span>
+                </label>
+                <input type="file" style="display: none;" id="img2">
             </div>
         </div>
         <button v-on:click="botao()" v-if="cliqueiEditar == true">
@@ -44,8 +49,8 @@ export default {
             this.cliqueiEditar = false
         },
         editarAparece() {
-            if(this.cliqueiBotao == true)
-            return "position: absolute; font-size:5vh; height: 20vh; width: 9.7vw;display: flex;justify-content: center;align-items: center;border-radius: 50%;background-color: rgba(0, 0, 0, 0.5);"
+            if (this.cliqueiBotao == true)
+                return "position: absolute; font-size:5vh; height: 20vh; width: 9.7vw;display: flex;justify-content: center;align-items: center;border-radius: 50%;background-color: rgba(0, 0, 0, 0.5);"
         },
         confirmar() {
             this.cliqueiBotao = false
@@ -63,6 +68,12 @@ export default {
     justify-content: center;
     flex-direction: column;
     gap: 2vw;
+}
+
+.label {
+    width: 10px;
+    display: none;
+    cursor: pointer;
 }
 
 .conteiner-perfil {
@@ -83,14 +94,18 @@ export default {
     transition: 300ms;
     cursor: pointer;
 }
-.perfil:hover  {
+
+.perfil:hover {
     color: #f64348;
+    cursor: pointer;
 }
-.perfil:hover > .icone-perfil {
+
+.perfil:hover>.icone-perfil {
     color: #f64348;
     border-color: #f64348;
     transition: 300ms;
 }
+
 .icone-perfil {
     font-size: 15vh;
     color: #B2B2B2;
@@ -100,6 +115,7 @@ export default {
     cursor: pointer;
     background-color: #353535;
     transition: 300ms;
+    cursor: pointer;
 }
 
 button {
@@ -121,10 +137,4 @@ button:hover {
     color: white;
 }
 
-.editar {
-    display: none;
-}
-.editar:hover {
-    color: #f64348;
-}
 </style>

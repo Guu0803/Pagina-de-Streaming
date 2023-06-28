@@ -69,6 +69,8 @@
         </div>
         <div class="conteiner-geral">
             <div class="fileira-cards">
+                    <!-- Cada component minicard esta recebendo uma prop, "nome", ":sinopse (se for verdadeiro, ao passar o mouse em cima exibira a sinopse)", 
+                "conteudoSinopse (a sinopse em si)" e "classificação" -->
                 <miniCards :imagem="require('@/assets/viland-saga.png')" nome="Vinland Saga" :sinopse="true"
                     conteudoSinopse="Thorfinn embarca em uma jornada com o assassino de seu pai para se vingar e 
                     terminar sua vida em um duelo como um honrado guerreiro e prestar homenagem a seu pai." classificacao="8.8 / 10" />

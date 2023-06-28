@@ -115,20 +115,20 @@
                 <miniCards :imagem="require('@/assets/esposa-mentira.jpg')" :scale="true"/>
             </div>
             <div class="fileira-cards" v-if="filmes == 2">
-                <miniCards :imagem="require('@/assets/baleia.png')" />
-                <miniCards :imagem="require('@/assets/avatar.png')" />
-                <miniCards :imagem="require('@/assets/creed-3.jpg')" />
-                <miniCards :imagem="require('@/assets/enrolados.png')" />
-                <miniCards :imagem="require('@/assets/eternos.png')" />
-                <miniCards :imagem="require('@/assets/homem-aranha-2.png')" />
+                <miniCards :imagem="require('@/assets/baleia.png')"  :scale="true"/>
+                <miniCards :imagem="require('@/assets/avatar.png')"  :scale="true"/>
+                <miniCards :imagem="require('@/assets/creed-3.jpg')"  :scale="true"/>
+                <miniCards :imagem="require('@/assets/enrolados.png')"  :scale="true"/>
+                <miniCards :imagem="require('@/assets/eternos.png')"  :scale="true"/>
+                <miniCards :imagem="require('@/assets/homem-aranha-2.png')"  :scale="true"/>
             </div>
             <div class="fileira-cards" v-if="filmes == 3">
-                <miniCards :imagem="require('@/assets/kingsman-origem.png')" />
-                <miniCards :imagem="require('@/assets/maquinas-mortais.jpg')" />
-                <miniCards :imagem="require('@/assets/panico-6.png')" />
-                <miniCards :imagem="require('@/assets/super-velozes.png')" />
-                <miniCards :imagem="require('@/assets/venon-2.png')" />
-                <miniCards :imagem="require('@/assets/a-morte-do-demonio.png')" />
+                <miniCards :imagem="require('@/assets/kingsman-origem.png')"  :scale="true"/>
+                <miniCards :imagem="require('@/assets/maquinas-mortais.jpg')"  :scale="true"/>
+                <miniCards :imagem="require('@/assets/panico-6.png')"  :scale="true"/>
+                <miniCards :imagem="require('@/assets/super-velozes.png')"  :scale="true"/>
+                <miniCards :imagem="require('@/assets/venon-2.png')" :scale="true" />
+                <miniCards :imagem="require('@/assets/a-morte-do-demonio.png')" :scale="true" />
             </div>
             <span class="material-icons seta" v-on:click="passarFilmes()">
                 keyboard_arrow_right

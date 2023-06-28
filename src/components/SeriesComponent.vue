@@ -67,32 +67,70 @@
         </div>
         <div class="conteiner-geral">
             <div class="fileira-cards">
-                <miniCards :imagem="require('@/assets/the-witcher.jpg')" nome="The Withcer" />
-                <miniCards :imagem="require('@/assets/casa-de-papel.jpg')" nome="La Casa de Papel"/>
-                <miniCards :imagem="require('@/assets/house.jpg')" nome="House"/>
-                <miniCards :imagem="require('@/assets/mr-robot.jpg')" nome="Mr. Robot" />
-                <miniCards :imagem="require('@/assets/prison-break.jpg')" nome="Prison Break" />
+                <!-- Cada component minicard esta recebendo uma prop, "nome", ":sinopse (se for verdadeiro, ao passar o mouse em cima exibira a sinopse)", 
+                "conteudoSinopse (a sinopse em si)" e "classificação" -->
+                <miniCards :imagem="require('@/assets/the-witcher.jpg')" nome="The Withcer"  :sinopse="true" 
+                    conteudoSinopse="Geralt de Rivia, um caçador de monstros, luta contra um mundo onde as vezes as pessoas são mais temidas do
+                    que as bestas." classificacao="8.1 / 10" />
+                <miniCards :imagem="require('@/assets/casa-de-papel.jpg')" nome="La Casa de Papel" :sinopse="true"
+                    conteudoSinopse="Um grupo de ladrões peculiares assaltam a Fábrica de Moneda e Timbre para realizar o assalto mais
+                    perfeito da história da Espanha e levar para casa bilhões de euros." classificacao="8.2 / 10"/>
+                <miniCards :imagem="require('@/assets/house.jpg')" nome="House" :sinopse="true"
+                    conteudoSinopse="Um médico antisocial faz o que seja para resolver os casos mas difíceis que se encontra com a ajuda
+                    do equipe de médicos." classificacao="8.7 / 10"/>
+                <miniCards :imagem="require('@/assets/mr-robot.jpg')" nome="Mr. Robot: Sociedade Hacker" :sinopse="true" 
+                    conteudoSinopse="Elliot, um jovem engenheiro de segurança cibernética e hacker vigilante, 
+                    torna-se uma figura chave em um jogo de domínio global quando ele e seus aliados tentam derrubar a 
+                    corporação para a qual ele trabalha." classificacao="8.5 / 10"/>
+                <miniCards :imagem="require('@/assets/prison-break.jpg')" nome="Prison Break" :sinopse="true" 
+                    conteudoSinopse="Por conspiraçao política um homem inocente é levado para prisão, sua única esperança é seu irmão, 
+                    quem deliberadamente se leva á mesma prisão para escapar da prisão o dois juntos." classificacao="8.3 / 10"/>
             </div>
             <div class="fileira-cards">
-                <miniCards :imagem="require('@/assets/citadel.jpg')" nome="Citadel" />
-                <miniCards :imagem="require('@/assets/strain.png')" nome="Strain"/>
-                <miniCards :imagem="require('@/assets/moon-night.jpg')" nome="Cavaleiro da Lua"/>
-                <miniCards :imagem="require('@/assets/fauda.jpg')" nome="Fauda"/>
-                <miniCards :imagem="require('@/assets/bodyguard.jpg')" nome="Segurança em jogo" />
+                <miniCards :imagem="require('@/assets/citadel.jpg')" nome="Citadel" :sinopse="true"     
+                    conteudoSinopse="A agência global de espionagem Citadel foi fechada e as memórias de seus agentes foram apagadas. 
+                    Manticore agora fica mais forte. Os agentes da Cidadela conseguirão recuperar suas memórias e revidar?" classificacao="6.1 / 10 "/>
+                <miniCards :imagem="require('@/assets/strain.png')" nome="Strain" :sinopse="true"   
+                    conteudoSinopse="Um misterioso vírus com características de uma antiga e maligna estirpe de vampirismo 
+                    está assolando a cidade de Nova York." classificacao="7.3 / 10"/>
+                <miniCards :imagem="require('@/assets/moon-night.jpg')" nome="Cavaleiro da Lua" :sinopse="true"
+                    conteudoSinopse="Marc Spector, um ex-agente da CIA, recebe uma segunda chance de vida do Deus egípcio Khonshu, 
+                    que canaliza o poder da lua para se tornar seu avatar na Terra." classificacao="7.3 / 10"/>
+                <miniCards :imagem="require('@/assets/fauda.jpg')" nome="Fauda" :sinopse="true"
+                    conteudoSinopse="Histórias humanas, vistas de ambos os lados do conflito Israel-Palestina." classificacao="8.3 / 10"/>
+                <miniCards :imagem="require('@/assets/bodyguard.jpg')" nome="Segurança em jogo" :sinopse="true"
+                    conteudoSinopse="Uma série de suspense que envolve a realeza e o departamento de proteção especial da polícia de Londres." classificacao="8.1 / 10" />
             </div>
             <div class="fileira-cards">
-                <miniCards :imagem="require('@/assets/halo.png')" nome="Halo"/>
-                <miniCards :imagem="require('@/assets/peaky-blinders.png')" nome="Peaky Blinders"/>
-                <miniCards :imagem="require('@/assets/ted-lasso.png')" nome="Ted Lasso"/>
-                <miniCards :imagem="require('@/assets/sweet-tooth.png')" nome="Sweet Tooth"/>
-                <miniCards :imagem="require('@/assets/loki.png')" nome="Loki"/>
+                <miniCards :imagem="require('@/assets/halo.png')" nome="Halo" :sinopse="true"
+                    conteudoSinopse="Os extraterrestres ameaçam a existência humana em um confronto épico do século 26." classificacao="7.2 / 10"/>
+                <miniCards :imagem="require('@/assets/peaky-blinders.png')" nome="Peaky Blinders" :sinopse="true"
+                    conteudoSinopse="Depois de servir no Exército, Thomas Shelby e seus irmãos voltam para controlar a cidade, mas,
+                    conforme as ambições de Shelby se estendem, ele planeja construir seu próprio negócio e impedir qualquer um que atrapalhe." classificacao="8.8 / 10"/>
+                <miniCards :imagem="require('@/assets/ted-lasso.png')" nome="Ted Lasso" :sinopse="true"
+                    conteudoSinopse="Segue o treinador americano de futebol Ted Lasso, que chega ao Reino Unido para
+                    liderar um time da primeira divisão ao topo do futebol britânico." classificacao="8.8 / 10"/>
+                <miniCards :imagem="require('@/assets/sweet-tooth.png')" nome="Sweet Tooth" :sinopse="true"
+                    conteudoSinopse="Um rapaz que é meio humano e meio veado sobrevive num mundo pós-apocalíptico com outros híbridos." classificacao="7.8 / 10"/>
+                <miniCards :imagem="require('@/assets/loki.png')" nome="Loki" :sinopse="true"
+                    conteudoSinopse="O vilão Loki reempreende seu papel como o Deus do Mal em uma nova série que ocorre após os eventos de Vingadores: Ultimato." classificacao="8.2/ 10"/>
             </div>
             <div class="fileira-cards">
-                <miniCards :imagem="require('@/assets/walking-dead.png')" nome="Walking Dead" />
-                <miniCards :imagem="require('@/assets/origem.jpg')" nome="Origem"/>
-                <miniCards :imagem="require('@/assets/stranger-things.jpg')" nome="Stranger Things" />
-                <miniCards :imagem="require('@/assets/what-if.png')" nome="What if...?"/>
-                <miniCards :imagem="require('@/assets/roda-do-tempo.png')" nome="Roda do Tempo" />
+                <miniCards :imagem="require('@/assets/walking-dead.png')" nome="Walking Dead" :sinopse="true"
+                    conteudoSinopse="Um Xerife acorda de um coma para dar-se conta que o mundo está em ruínas, 
+                    e deve liderar um grupo de sobreviventes para se manter vivo." classificacao="8.1 / 10"/>
+                <miniCards :imagem="require('@/assets/origem.jpg')" nome="Origem" :sinopse="true"
+                    conteudoSinopse="Desvenda o mistério de uma cidade na América Central que aprisiona todos os que entram. 
+                    Enquanto os residentes lutam para manter uma sensação de normalidade e buscar uma saída, 
+                    eles também devem sobreviver às ameaças da floresta ao redor." classificacao="7.7 / 10"/>
+                <miniCards :imagem="require('@/assets/stranger-things.jpg')" nome="Stranger Things" :sinopse="true"
+                    conteudoSinopse="Depois do desaparecimento de un menino, sua mãe, um chefe de polícia
+                     e seus amigos precisam enfrentar forças aterrorizantes para trazê-lo de volta." classificacao="8.7 / 10" />
+                <miniCards :imagem="require('@/assets/what-if.png')" nome="What if...?" :sinopse="true"
+                    conteudoSinopse="Explorando momentos cruciais do Universo do Cinema da Marvel, levando o público ao território desconhecido." classificacao="7.4 / 10"/>
+                <miniCards :imagem="require('@/assets/roda-do-tempo.png')" nome="Roda do Tempo" :sinopse="true" 
+                    conteudoSinopse="Situada em um mundo de alta fantasia onde a magia existe, mas apenas alguns podem acessá-la, 
+                    uma mulher chamada Moiraine cruza o caminho com cinco rapazes e moças. Isso desencadeia uma jornada perigosa por todo o mundo." classificacao="7.1 / 10"/>
             </div>
         </div>
     </div>
