@@ -5,14 +5,28 @@
             <img :src="imagem" class="card" :class="checarScale()">
             <!-- Fim -->
             <div v-if="sinopse == true" class="teste">
-                <div class="titulo-sinopse">
-                    {{ nome }}
-                </div>
                 <div class="classificacao">
                     {{ classificacao }}
                     <span class="material-icons estrela">
                         star_rate
                     </span>
+                </div>
+                <div class="categoria-conteiner">
+                    <div class="categoria" >
+                        {{categoria1}}
+                    </div>
+                    <span class="material-icons dot">
+                        fiber_manual_record
+                    </span>
+                    <div class="categoria">
+                        {{categoria2}}
+                    </div>
+                    <span class="material-icons dot" v-if="categoria3">
+                        fiber_manual_record
+                    </span>
+                    <div class="categoria">
+                        {{categoria3}}
+                    </div>
                 </div>
                 {{ conteudoSinopse }}
             </div>
@@ -25,7 +39,7 @@
 <script>
 export default {
     name: "miniCardsComponent",
-    props: ["imagem", "nome", "sinopse", "conteudoSinopse", "classificacao", "scale"],
+    props: ["imagem", "nome", "sinopse", "conteudoSinopse", "classificacao", "scale", "categoria1", "categoria2", "categoria3"],
     methods: {
         checarScale() {
             if (this.scale == true) {
@@ -42,9 +56,11 @@ export default {
     align-items: center;
 
 }
+
 .div-teste {
     position: relative;
 }
+
 .card {
     height: 40vh;
     width: 14vw;
@@ -73,14 +89,12 @@ export default {
     transition: 300ms;
 }
 
-
-
 .teste {
     visibility: hidden;
     transition: 100ms ease-in-out;
     display: flex;
     text-align: center;
-    padding: 10% 0 ;
+    padding: 10% 0;
     flex-direction: column;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.8);
@@ -98,16 +112,25 @@ export default {
     transition: 100ms ease-in-out;
 }
 
-/* .div-teste:hover ~ .info-card {
-    visibility: hidden;
-    transition: 100ms ease-in-out;
-} */
-
-.titulo-sinopse {
+.div-teste:hover~.info-card {
     color: #f64348;
-    font-size: 2.5vh;
+    transition: 100ms ease-in-out;
 }
-
+.dot {
+    font-size: 1.5vh;
+    color: #B2B2B2;
+}
+.categoria-conteiner{
+    display: flex;
+    color: #B2B2B2;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5vh;
+    margin: 2vh 0;
+}
+.categoria:hover {
+    color: #f64348;
+} 
 .classificacao {
     display: flex;
     justify-content: center;
