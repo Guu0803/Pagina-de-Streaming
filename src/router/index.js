@@ -3,15 +3,16 @@ import Cadastro from '@/views/Cadastro.vue'
 import Login from '@/views/Login.vue'
 import capa from '@/views/capa.vue'
 import categoria from '@/views/Categoria.vue'
-import Inicio from '@/views/inicio.vue'
+import Home from '@/views/Home.vue'
 import MinhaPagina from '@/views/MinhaConta.vue'
 import Perfil from '@/views/Perfil.vue'
+import Inicio from '@/views/Inicio.vue'
 
 const routes = [
   {
-    path: '/',
-    name: "inicio",
-    component: Inicio
+    path: '/home',
+    name: "home",
+    component: Home
   },
   {
     path: '/cadastro',
@@ -29,7 +30,7 @@ const routes = [
     component: capa
   }, 
   {
-    path: '/categoria/:type',
+    path: '/categoria',
     name: 'pagina-categoria',
     component: categoria
   },
@@ -42,6 +43,11 @@ const routes = [
     path: '/meu-perfil',
     name: 'meu-perfil',
     component: Perfil
+  },
+  {
+    path: '/',
+    name: 'inicio',
+    component: Inicio
   }
 ]
 

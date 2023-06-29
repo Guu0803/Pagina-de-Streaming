@@ -2,7 +2,7 @@
   <div>
     <div class="cabecalho">
       <div>
-        <RouterLink to="/" class="escrita-cabecalho">
+        <RouterLink to="/home" class="escrita-cabecalho">
           Início
         </RouterLink>
       </div>
