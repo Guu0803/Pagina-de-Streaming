@@ -1,5 +1,5 @@
 <template>
-    <div class="tela">
+    <div class="tela" v-if="!parametro">
         <div class="conteiner-cards">
             <card texto="Animes" />
             <card texto="Séries" />
@@ -36,6 +36,7 @@ export default {
     },
     created() {
         this.parametro = this.$route.params.type
+        console.log(this.parametro)
     },
     watch: {
         "$route.params.type"() {

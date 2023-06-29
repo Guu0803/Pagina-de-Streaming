@@ -11,7 +11,7 @@
                         edit
                     </span>
                 </label>
-                <input type="file" style="display:none" id="img">
+                <input type="file" style="display:none" id="img" v-on:change="event => alterarImg(event)">
             </div>
             <div class="perfil">
                 <span class="material-icons icone-perfil">
@@ -25,6 +25,7 @@
                 </label>
                 <input type="file" style="display: none;" id="img2">
             </div>
+            <img :src="imagem" v-if="imagem">
         </div>
         <button v-on:click="botao()" v-if="cliqueiEditar == true">
             Editar Perfil
@@ -40,7 +41,8 @@ export default {
     data() {
         return {
             cliqueiBotao: false,
-            cliqueiEditar: true
+            cliqueiEditar: true,
+            imagem:''
         }
     },
     methods: {
@@ -55,6 +57,10 @@ export default {
         confirmar() {
             this.cliqueiBotao = false
             this.cliqueiEditar = true
+        },
+        alterarImg(event) {
+            this.imagem = URL.createObjectURL(event.target.files[0])
+            console.log(event.target.files[0])
         }
     }
 }

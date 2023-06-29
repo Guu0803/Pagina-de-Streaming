@@ -30,7 +30,7 @@ const routes = [
     component: capa
   }, 
   {
-    path: '/categoria',
+    path: '/categoria/:type?',
     name: 'pagina-categoria',
     component: categoria
   },

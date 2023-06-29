@@ -60,9 +60,7 @@
                                 </span>
                                 Romance
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -139,7 +137,6 @@
                     ela conhece um jogador socialmente desajeitado que pode resolver todos os seus problemas." classificacao="7.7 / 10" categoria1="Comédia" categoria2="Romance" />
             </div>
         </div>
-
     </div>
 </template>
 <script>
