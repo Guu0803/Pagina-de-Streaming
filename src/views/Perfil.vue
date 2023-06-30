@@ -9,102 +9,35 @@
                 </div>
                 {{ usuario.nome }}
                 <div class="conteiner-editar" :style="editarAparece()">
-                    <label :for="'idDoInput'+ usuario.id">
+                    <label :for="'idDoInput' + usuario.id">
                         <span class="material-icons icones">
                             edit
                         </span>
                     </label>
-                    <span class="material-icons icones">
+                    <span class="material-icons icones" v-on:click="deletar()">
                         delete
                     </span>
                 </div>
-                <input type="file" style="display:none" :id="'idDoInput'+ usuario.id" v-on:change="event => alterarImgUser1(event, usuario)">
+                <input type="file" style="display:none" :id="'idDoInput' + usuario.id"
+                    v-on:change="event => alterarImgUser1(event, usuario)">
             </div>
-            <!-- <div class="perfil" v-if="numeroUsuario >= 2">
-                <span class="material-icons  icone-perfil" v-if="imgUsuario2 == false">
-                    person
-                </span>
-                <div :style="getImgUser2()" v-if="imagem2">
-                </div>
-                Novo perfil
-                 <div class="conteiner-editar" :style="editarAparece()">
-                    <label for="img2">
-                        <span class="material-icons icones">
-                            edit
-                        </span>
-                    </label>
-                    <span class="material-icons icones">
-                        delete
-                    </span>
-                </div>
-                <input type="file" style="display: none;" id="img2" v-on:change="event => alterarImgUser2(event)">
-            </div>
-
-            <div class="perfil" v-if="numeroUsuario >= 3">
-                <span class="material-icons  icone-perfil" v-if="imgUsuario3 == false">
-                    person
-                </span>
-                <div :style="getImgUser3()" v-if="imagem3">
-                </div>
-                Novo perfil
-                <div class="conteiner-editar" :style="editarAparece()">
-                    <label for="img3">
-                        <span class="material-icons icones">
-                            edit
-                        </span>
-                    </label>
-                    <span class="material-icons icones">
-                        delete
-                    </span>
-                </div>
-                <input type="file" style="display: none;" id="img3" v-on:change="event => alterarImgUser3(event)">
-            </div>
-
-            <div class="perfil" v-if="numeroUsuario >= 4">
-                <span class="material-icons  icone-perfil" v-if="imgUsuario4 == false">
-                    person
-                </span>
-                <div :style="getImgUser4()" v-if="imagem4">
-                </div>
-                Novo perfil
-                <div class="conteiner-editar" :style="editarAparece()">
-                    <label for="img4">
-                        <span class="material-icons icones">
-                            edit
-                        </span>
-                    </label>
-                    <span class="material-icons icones">
-                        delete
-                    </span>
-                </div>
-                <input type="file" style="display: none;" id="img4" v-on:change="event => alterarImgUser4(event)">
-            </div>
-
-            <div class="perfil" v-if="numeroUsuario >= 5">
-                <span class="material-icons  icone-perfil" v-if="imgUsuario5 == false">
-                    person
-                </span>
-                <div :style="getImgUser5()" v-if="imagem5">
-                </div>
-                Novo perfil
-                <div class="conteiner-editar" :style="editarAparece()">
-                    <label for="img5">
-                        <span class="material-icons icones">
-                            edit
-                        </span>
-                    </label>
-                    <span class="material-icons icones">
-                        delete
-                    </span>
-                </div>
-                <input type="file" style="display: none;" id="img5" v-on:change="event => alterarImgUser5(event)">
-            </div> -->
             <div class="perfil" v-on:click="addUsuario()">
                 <span class="material-icons icone-perfil">
                     person_add
                 </span>
                 Novo perfil
             </div>
+        </div>
+        <div class="novo-usuario-conteiner" v-if="adicionarUsuario == true"> 
+            <div class="titulo-usuario-conteiner" >
+                Adicionar novo Usuario
+            </div>
+            Nome:
+            <input type="name" v-model="nomeUsuario" class="input-nome">
+            <input type="file" v-on:change="event => imagemDoUser(event)" class="input-file">
+            <button v-on:click="confimarNovoUsario()">
+                Confirmar
+            </button>
         </div>
         <div class="msg-alerta" v-if="mensagemAlerta == true">
             Numero máximo de usuários foi atingido
@@ -127,39 +60,40 @@ export default {
         return {
             editarPerfil: true,
             confirmarPerfil: false,
-            imagem1: '',
-            imagem2: '',
-            imagem3: '',
-            imagem4: '',
-            imagem5: '',
-            imgUsuario1: false,
-            imgUsuario2: false,
-            imgUsuario3: false,
-            imgUsuario4: false,
-            imgUsuario5: false,
+            nomeUsuario: "",
             listaUsuarios: [
                 {
                     nome: "Gustavo",
                     img: "",
                     id: 1
                 },
-                {
-                    nome: "mira",
-                    img: "",
-                    id: 2
-                }
             ],
-            mensagemAlerta: false
+            mensagemAlerta: false,
+            adicionarUsuario: false,
+            confirmou: false,
+            imagemEscolhida:''
         }
     },
     methods: {
         addUsuario() {
-            let usuario = {
-                nome: "novo perfil",
-                img: '',
-                id: this.listaUsuarios[this.listaUsuarios.length - 1].id + 1
+            if (this.listaUsuarios.length <= 4) {
+                this.adicionarUsuario = true
+            } else {
+                this.mensagemAlerta = true
             }
-            this.listaUsuarios.push(usuario)
+        },    
+        confimarNovoUsario() {
+            if (this.nomeUsuario && this.imagemEscolhida) {
+                this.adicionarUsuario = false
+                this.confirmar = true
+                    let usuario = {
+                        nome: this.nomeUsuario,
+                        img: this.imagemEscolhida,
+                        id: this.listaUsuarios[this.listaUsuarios.length - 1].id + 1
+                    }
+                    this.listaUsuarios.push(usuario)
+                    this.adicionarUsuario = false
+                }
         },
         editarBtn() {
             this.confirmarPerfil = true
@@ -178,43 +112,20 @@ export default {
             console.log(event.target.files[0])
             this.imgUsuario1 = true
         },
-        alterarImgUser2(event) {
-            this.imagem2 = URL.createObjectURL(event.target.files[0])
-            console.log(event.target.files[0])
-            this.imgUsuario2 = true
-        },
-        alterarImgUser3(event) {
-            this.imagem3 = URL.createObjectURL(event.target.files[0])
-            console.log(event.target.files[0])
-            this.imgUsuario3 = true
-        },
-        alterarImgUser4(event) {
-            this.imagem4 = URL.createObjectURL(event.target.files[0])
-            console.log(event.target.files[0])
-            this.imgUsuario4 = true
-        },
-        alterarImgUser5(event) {
-            this.imagem5 = URL.createObjectURL(event.target.files[0])
-            console.log(event.target.files[0])
-            this.imgUsuario5 = true
+        imagemDoUser(event) {
+            this.imagemEscolhida = URL.createObjectURL(event.target.files[0])
         },
         getImgUser1(imagemDoUsuario) {
             return "background-image: url(" + imagemDoUsuario + "); height:20vh; width:20vh; background-size:cover; border-radius:50%;"
         },
-        getImgUser2() {
-            return "background-image: url(" + this.imagem2 + "); height:20vh; width:20vh; background-size:cover; border-radius:50%;"
-        },
-        getImgUser3() {
-            return "background-image: url(" + this.imagem3 + "); height:20vh; width:20vh; background-size:cover; border-radius:50%;"
-        },
-        getImgUser4() {
-            return "background-image: url(" + this.imagem4 + "); height:20vh; width:20vh; background-size:cover; border-radius:50%;"
-        },
-        getImgUser5() {
-            return "background-image: url(" + this.imagem5 + "); height:20vh; width:20vh; background-size:cover; border-radius:50%;"
-        },
         fecharMsg() {
             this.mensagemAlerta = false
+        },
+        deletar() {
+            for (let index = 0; index < this.listaUsuarios.length; index++) {
+                const element = this.listaUsuarios[index];
+                element.splice(index, 1)
+            }
         }
 
     }
@@ -229,15 +140,19 @@ export default {
     justify-content: center;
     flex-direction: column;
     gap: 2vw;
+    position: relative;
 }
+
 .conteiner-editar {
     display: none;
     gap: 1vw;
 }
+
 .icones {
     cursor: pointer;
     color: #e8e8e8;
 }
+
 .icones:hover {
     color: #f64348;
 }
@@ -260,7 +175,30 @@ export default {
     transition: 300ms;
     cursor: pointer;
 }
-
+.novo-usuario-conteiner {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #111111;
+    border-radius: 10px;
+    color: #B2B2B2;
+    padding: 2vw;
+    gap: 1vw;
+}
+.input-nome {
+    padding: 1vh;
+    border: none;
+    border-radius: 10px;
+}
+.input-file {
+    cursor: pointer;
+}
+.titulo-usuario-conteiner {
+    font-size: 3vh;
+    color: #e8e8e8;
+}
 .perfil:hover {
     color: #f64348;
     cursor: pointer;
@@ -306,5 +244,4 @@ button:hover {
     color: #B2B2B2;
     font-size: 3vh;
 }
-
 </style>
