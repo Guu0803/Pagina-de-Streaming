@@ -11,13 +11,13 @@
           Categorias
         </router-link>
         <div class="conteudo-dropdown">
-          <router-link to="/categoria/series/" class="escrita-dropdown">
+          <router-link to="/series" class="escrita-dropdown">
             Séries
           </router-link>
-          <router-link to="/categoria/filmes/" class="escrita-dropdown">
+          <router-link to="/filmes" class="escrita-dropdown">
             Filmes
           </router-link>
-          <router-link to="/categoria/animes/" class="escrita-dropdown">
+          <router-link to="/animes" class="escrita-dropdown">
             Animes
           </router-link>
         </div>

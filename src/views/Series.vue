@@ -138,6 +138,7 @@
 <script>
 import miniCards from '@/components/MiniCards.vue'
 export default {
+    name:"paginaSeries",
     components: {
         miniCards
     },

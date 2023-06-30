@@ -39,7 +39,9 @@ export default {
     flex-direction: column;
     gap: 3vw;
     align-items: center;
-    margin-left: 5vw;
+    z-index: 1;
+    max-width: 40vw;
+    
 }
 .conteiner-titulo {
     display: flex;
@@ -65,10 +67,11 @@ button {
 }
 .conteiner-direito{
     width: 60vw;
-    height: 50vw;
-    background-size: cover;
-    box-shadow: 30px 30px  70px #1f1f1f inset, -20px -20px 20px 50px #1f1f1f inset ;
-    background-image: url("@/assets/mr-robot.jpg");
-    background-size: cover;
+    height: 35vw;
+    background-size:cover;
+    box-shadow: 60px 50px  40px #1f1f1f inset, -20px -50px  40px #1f1f1f inset ;
+    background-image: url("@/assets/banner-inicio.jpeg");
+    margin-left: -10vw;
+
 }
 </style>
