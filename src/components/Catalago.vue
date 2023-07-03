@@ -13,7 +13,7 @@ export default {
     .card {
         width: 15vw;
         height: 20vh;
-        border: 1px solid black;
+        color: black;
         background-image: url('@/assets/wallpaper-cards.avif');
         border-radius: 10px;
         cursor: pointer;
@@ -22,10 +22,12 @@ export default {
         align-items: center;
         font-size: 4vh;
         padding-left:1vw;
+        text-decoration: none;
+        transition: 200ms ease-in-out;
     }
     .card:hover {
-        color: white;
-        transition: 200ms;
+        color: #e8e8e8;
+        transition: 200ms ease-in-out;
         scale: 1.1;
     }
 </style>

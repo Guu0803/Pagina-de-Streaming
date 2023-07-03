@@ -43,6 +43,9 @@
                         <div>
                             R$25,90/mês
                         </div>
+                        <button class="alterar-botao">
+                            Alterar plano
+                        </button>
                     </div>
                 </div>
                 <button>
@@ -382,18 +385,24 @@ export default {
 .plano {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     border: 2px solid #1f1f1f;
     margin: 3vh 0;
-    width: 25vw;
+    width: 30vw;
+    height: 5vh;
     font-size: 2.5vh;
 }
 
-.premium {
-    font-size: 2.5vh;
+.alterar-botao {
+    cursor: pointer;
+    padding: 1vh;
+    border-radius: 10px;
+    border: none;
+    background-color: #1f1f1f;
     color: #e8e8e8;
-    margin-top: 1vw;
+    font-weight: bold;
+    transition: 300ms;
 }
-
 button {
     padding: 1.5vh;
     cursor: pointer;
@@ -403,7 +412,6 @@ button {
     color: #e8e8e8;
     font-weight: bold;
     transition: 300ms;
-    margin-top: 1vw;
 }
 
 button:hover {

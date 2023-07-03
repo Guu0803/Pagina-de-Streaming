@@ -1,15 +1,34 @@
 <template>
-    <div class="tela" v-if="!parametro">
+    <div class="tela"> 
+        <div class="titulo">
+            Categorias
+        </div>
         <div class="conteiner-cards">
-            <card texto="Animes" />
-            <card texto="Séries" />
-            <card texto="Filmes" />
+            <router-link to="/animes" class="link">
+                <card texto="Animes" />
+            </router-link>
+            <router-link to="/series" class="link">
+                <card texto="Séries" />
+            </router-link>
+            <router-link to="/filmes" class="link">
+                <card texto="Filmes" />
+            </router-link>
             <card texto="Ação" />
             <card texto="Romance" />
         </div>
         <div class="conteiner-cards">
             <card texto="Ficção" />
             <card texto="Terror" />
+            <card texto="Aventura" />
+            <card texto="Suspense" />
+            <card texto="Comédia" />
+        </div>
+        <div class="conteiner-cards">
+            <card texto="Drama" />
+            <card texto="Super-Herói" />
+            <card texto="Fantasia" />
+            <card texto="Sobrenatural" />
+            <card texto="Animação" />
         </div>
     </div>
 </template> 
@@ -20,20 +39,6 @@ export default {
     components: {
         card
     },
-    data() {
-        return {
-            parametro: undefined
-        }
-    },
-    created() {
-        this.parametro = this.$route.params.type
-        console.log(this.parametro)
-    },
-    watch: {
-        "$route.params.type"() {
-            this.parametro = this.$route.params.type
-        }
-    }
 }
 </script>
 <style scoped>
@@ -41,14 +46,23 @@ export default {
     width: 100%;
     height: 100vh;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     gap: 5vw;
 }
-
+.titulo {
+    color: #e8e8e8;
+    font-size: 4vh;
+    margin-left: 5vw;
+}
 .conteiner-cards {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 3vw;
+}
+
+.link {
+    text-decoration: none;
 }
 </style>

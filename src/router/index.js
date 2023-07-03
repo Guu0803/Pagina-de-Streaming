@@ -9,6 +9,7 @@ import Inicio from '@/views/Inicio.vue'
 import Animes from '@/views/Animes.vue'
 import Series from '@/views/Series.vue'
 import Filmes from '@/views/Filmes.vue'
+import Ajuda from '@/views/Ajuda.vue'
 
 const routes = [
   // Rota Home
@@ -70,6 +71,12 @@ const routes = [
     path: '/filmes',
     name: 'paginaFilmes',
     component: Filmes
+  },
+  // Rota Ajuda 
+  {
+    path: '/ajuda',
+    name: 'paginaAjuda',
+    component: Ajuda
   }
 ]
 

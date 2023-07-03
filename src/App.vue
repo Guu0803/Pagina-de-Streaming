@@ -43,9 +43,9 @@
           <router-link to="/meu-perfil" class="escrita-dropdown" >
             Perfil
           </router-link>
-          <div class="escrita-dropdown">
+          <router-link to="/ajuda" class="escrita-dropdown" >
             Ajuda
-          </div>
+          </router-link>
           <div class="escrita-dropdown">
             Sair
           </div>
@@ -80,9 +80,6 @@
       <div class="conteiner-subtiluos">
         <div class="subtitulos-rodape">
           Nome do site
-        </div>
-        <div class="teste-gratis">
-          Experimente Grátis
         </div>
         <div class="escrita-rodape">
           Sobre
@@ -231,14 +228,6 @@
 }
 
 .subtitulos-rodape:hover {
-  color: #f64348;
-}
-.teste-gratis {
-  cursor: pointer;
-  color: white;
-  font-size: 2.5vh;
-}
-.teste-gratis:hover {
   color: #f64348;
 }
 input {
