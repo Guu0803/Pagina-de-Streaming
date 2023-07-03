@@ -39,21 +39,14 @@
                 <div class="descricao">
                     Gerencie seu plano de assinatura
                     <div class="plano">
-                        Plano Básico
+                        Plano Mensal
                         <div>
                             R$25,90/mês
                         </div>
                     </div>
                 </div>
-                <div>
-                    Torne-se Premium
-                </div>
-                <div class="premium">
-                    Acesso ilimitado a todo o conteúdo, sem anúncios,
-                    assista videos em 4k e em até 5 dispositvos simultaneamente.
-                </div>
                 <button>
-                    Assinar Premium
+                    Cancelar Assinatura
                 </button>
             </div>
             <!-- fim -->
