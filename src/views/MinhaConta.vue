@@ -152,7 +152,7 @@
             <div class="conteiner-sub-titulos" v-if="tab == 'email'">
                 Alterar E-mail
                 <div class="descricao">
-                    Altere o e-mail e senha para fazer login
+                    Altere o e-mail para recceber nossas novidades
                 </div>
                 <div class="alterar-input">
                     E-mail atual:
@@ -230,8 +230,8 @@
                     Cartão de Crédito
                     <div class="cartao">
                         <img src="@/assets/mastercard.svg"> **** **** **** 7777
-                        <div class="editar">
-                            Editar
+                        <div class="alterar">
+                            alterar
                         </div>
                     </div>
                     <button>
@@ -540,7 +540,7 @@ input[type="password"] {
     margin: 1vw 0;
 }
 
-.editar {
+.alterar {
     color: #B2B2B2;
     font-size: 2vh;
     margin-left: 2vw;
@@ -548,7 +548,7 @@ input[type="password"] {
     transition: 300ms;
 }
 
-.editar:hover {
+.alterar:hover {
     color: #f64348;
     transition: 300ms;
 }

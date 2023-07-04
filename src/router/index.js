@@ -10,6 +10,8 @@ import Animes from '@/views/Animes.vue'
 import Series from '@/views/Series.vue'
 import Filmes from '@/views/Filmes.vue'
 import Ajuda from '@/views/Ajuda.vue'
+import Termos from '@/views/TermosDeUso.vue'
+import Politica from '@/views/PoliticaDePrivacidade.vue'
 
 const routes = [
   // Rota Home
@@ -77,6 +79,18 @@ const routes = [
     path: '/ajuda',
     name: 'paginaAjuda',
     component: Ajuda
+  },
+  // Rota Termos de Uso
+  {
+    path:'/termos-de-uso',
+    name: "paginaTermosDeUso",
+    component: Termos
+  },
+  // Rota Politica de Privacidade
+  {
+    path: '/politica-de-privacidade',
+    name:"paginaPoliticaDePrivacidade",
+    component: Politica
   }
 ]
 
