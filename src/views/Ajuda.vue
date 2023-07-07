@@ -6,7 +6,7 @@
                <!-- Sumario Planos -->
                 <details>
                     <summary>
-                        PLanos
+                        Planos
                     </summary>
                     <p v-on:click="assinar()"> Como assinar "nome do site" </p>
                     <p v-on:click="planos()"> Alterar Plano </p>
@@ -35,6 +35,7 @@
                     </summary>
                     <p v-on:click="termos()"> Termos de Uso</p>
                     <p v-on:click="politica()"> Política de Privacidade </p>
+                    <p v-on:click="aviso()"> Aviso Legal</p>
                 </details>
                 <!-- Fim -->
             </div>
@@ -196,6 +197,9 @@ export default {
         politica() {
             this.$router.push("/politica-de-privacidade")
         },
+        aviso(){
+            this.$router.push("/aviso-legal")
+        },
         assinar(){
             this.tab = "assinar"
         },
@@ -290,10 +294,5 @@ p:hover {
     text-align: left;
     color: #e8e8e8;
 
-}
-
-.link {
-    text-decoration: none;
-    color: #e8e8e8;
 }
 </style>

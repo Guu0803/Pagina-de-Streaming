@@ -19,6 +19,7 @@
             b. Podemos coletar automaticamente informações do dispositivo que você utiliza para acessar o site, incluindo
             endereço IP, tipo de navegador e sistema operacional.
         </div>
+        
         <div class="conteiners">
             <div class="titulo">
                 Uso das Informações:

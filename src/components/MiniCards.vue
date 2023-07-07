@@ -1,5 +1,5 @@
 <template>
-    <div class="conteiner-card">
+    <div class="conteiner-card" v-on:click="salvar()">
         <div class="div-teste">
             <!-- :class metodo que esta verificando na pagina inicial se é verdadeiro ou não a condição e retornando uma classe -->
             <img :src="imagem" class="card" :class="checarScale()">
@@ -39,12 +39,21 @@
 <script>
 export default {
     name: "miniCardsComponent",
-    props: ["imagem", "nome", "sinopse", "conteudoSinopse", "classificacao", "scale", "categoria1", "categoria2", "categoria3"],
+    props: ["imagem", "nome", "sinopse", "conteudoSinopse", "classificacao", "scale", "categoria1", "categoria2", "categoria3", "sinopseCompleta"],
     methods: {
         checarScale() {
             if (this.scale == true) {
                 return "card-scale"
             }
+        },
+        salvar() {
+            let informarcoes = {
+                name: this.nome,
+                sinopse: this.sinopseCompleta
+            }
+            informarcoes = JSON.stringify(informarcoes)
+            localStorage.setItem("info", informarcoes)
+            this.$router.push("/detalhe-titulo")
         }
     }
 }

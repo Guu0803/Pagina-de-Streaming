@@ -87,9 +87,15 @@
         <div class="escrita-rodape">
           Ajuda
         </div>
-        <div class="escrita-rodape">
-          Termos de Uso / Política de Privacidade
-        </div>
+        <router-link to="/termos-de-uso" class="escrita-rodape">
+          Termos de Uso
+        </router-link>
+        <router-link to="/politica-de-privacidade" class="escrita-rodape">
+          Política de Privacidade
+        </router-link>
+        <router-link to="/aviso-legal" class="escrita-rodape">
+          Aviso Legal
+        </router-link>
       </div>
       <div class="conteiner-subtiluos">
         <div class="subtitulos-rodape">
@@ -106,7 +112,11 @@
   </div>
 </template>
   
-<style scoped>
+<style>
+body {
+    margin: 0;
+    background-color: #1f1f1f;
+    }
 .cabecalho {
   width: 100%;
   background-color: #121212;
@@ -208,6 +218,7 @@
   color: #B2B2B2;
   cursor: pointer;
   width: fit-content;
+  text-decoration: none;
 }
 
 .conteiner-subtiluos {

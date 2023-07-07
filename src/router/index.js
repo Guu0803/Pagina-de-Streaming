@@ -12,6 +12,8 @@ import Filmes from '@/views/Filmes.vue'
 import Ajuda from '@/views/Ajuda.vue'
 import Termos from '@/views/TermosDeUso.vue'
 import Politica from '@/views/PoliticaDePrivacidade.vue'
+import Aviso from '@/views/AvisoLegal.vue'
+import Detalhes from '@/views/DetalhesTitulo.vue'
 
 const routes = [
   // Rota Home
@@ -23,7 +25,7 @@ const routes = [
   // Rota Cadastro
   {
     path: '/cadastro',
-    name:"pagina-cadastro",
+    name: "pagina-cadastro",
     component: Cadastro
   },
   // Rota Login 
@@ -65,7 +67,7 @@ const routes = [
   // Rota Series 
   {
     path: '/series',
-    name:'paginaSeries',
+    name: 'paginaSeries',
     component: Series
   },
   // Rota Filmes'
@@ -82,15 +84,27 @@ const routes = [
   },
   // Rota Termos de Uso
   {
-    path:'/termos-de-uso',
+    path: '/termos-de-uso',
     name: "paginaTermosDeUso",
     component: Termos
   },
   // Rota Politica de Privacidade
   {
     path: '/politica-de-privacidade',
-    name:"paginaPoliticaDePrivacidade",
+    name: "paginaPoliticaDePrivacidade",
     component: Politica
+  },
+  // Rota Aviso Legal
+  {
+    path: '/aviso-legal',
+    name: 'paginaAvisoLegal',
+    component: Aviso
+  },
+  // Rota Detalhe Titulo 
+  {
+    path: '/detalhe-titulo',
+    name:"detalheTitulo",
+    component: Detalhes
   }
 ]
 
