@@ -32,6 +32,15 @@
                 </span>
                 Trailer
             </div>
+            <div class="conteiner-play" v-on:click="addLista()">
+                <span class="material-icons" v-if="adicionadoLista == false">
+                    add
+                </span>
+                <span class="material-icons" v-if="adicionadoLista == true">
+                    done
+                </span>
+                Lista
+            </div>
         </div>
         <div class="sinopse">
             {{ informarcoes.sinopse }}
@@ -60,15 +69,24 @@ export default {
     name: "detalheTitulo",
     data() {
         return {
-            informarcoes: {}
+            informarcoes: {},
+            adicionadoLista: false
         }
     },
     methods: {
-        getImage() {
+        getImage(){
             return "background-image: url(" + this.informarcoes.banner + ")"
         },
-        voltar() {
+        voltar(){
             this.$router.go(-1)
+        },
+        addLista(){
+            if(this.adicionadoLista == false) {
+                this.adicionadoLista = true
+            } else {
+                this.adicionadoLista = false
+            }
+           
         },
     },
     created() {
@@ -112,34 +130,38 @@ export default {
     font-size: 6vh;
     position: absolute;
     bottom: 3vw;
-    left: 8vw;
+    left: 9vw;
     display: flex;
     align-items: center;
     gap: 2vw;
     text-transform: uppercase;
 }
+
 .conteiner-reproduzir {
     display: flex;
     color: #e8e8e8;
-    margin-left: 8vw;
+    margin-left: 8.2vw;
     width: fit-content;
     margin-top: 1vw;
     font-size: 4vh;
     gap: 2vw;
 }
+
 .conteiner-play {
     display: flex;
     align-items: center;
     gap: 1vh;
 }
-.conteiner-play:hover, .conteiner-trailer:hover {
+
+.conteiner-play:hover {
     color: #f64348;
     cursor: pointer;
 }
 
 .play {
-    font-size: 6vh;
+    font-size: 5vh;
 }
+
 .info {
     display: flex;
     align-items: center;
@@ -149,6 +171,7 @@ export default {
     bottom: 0;
     left: 9vw;
     font-size: 2.5vh;
+
 }
 
 .sinopse {
@@ -157,6 +180,7 @@ export default {
     font-size: 3vh;
     margin: 2vw 0 0 9vw;
     text-align: justify;
+
 }
 
 .categorias {
@@ -165,12 +189,13 @@ export default {
     color: #e8e8e8;
     gap: 1vw;
     font-size: 2vh;
-    margin: 1vw 0 0 10vw;
+    margin: 1vw 0 0 9vw;
 }
 
 .categorias .dot {
     font-size: 2vh;
 }
+
 .escrita-categoria:hover {
     color: #f64348;
     cursor: pointer;

@@ -116,6 +116,7 @@
 body {
     margin: 0;
     background-color: #1f1f1f;
+    font-family: 'Karla', sans-serif;
     }
 .cabecalho {
   width: 100%;

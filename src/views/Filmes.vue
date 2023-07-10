@@ -97,8 +97,7 @@
                     sinopseCompleta="O adolescente Gardner Elliot é o primeiro humano nascido em solo marciano. Mas ele deseja fazer uma viagem à Terra para conhecer
                     a verdade sobre seu pai biológico, e sobre seu nascimento. Nesta jornada, ele tem o apoio de Tulsa." 
                     :faixaEtaria="require('@/assets/pegi-12.png')"
-                    duracaoFilme="2h1 min"
-                    />
+                    duracaoFilme="2h1 min"/>
 
                 <miniCards 
                     :imagem="require('@/assets/vida-inseto.jpg')" 
