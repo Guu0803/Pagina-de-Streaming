@@ -39,7 +39,7 @@
 <script>
 export default {
     name: "miniCardsComponent",
-    props: ["imagem", "nome", "sinopse", "conteudoSinopse", "classificacao", "scale", "categoria1", "categoria2", "categoria3", "sinopseCompleta"],
+    props: ["imagem", "nome", "sinopse", "conteudoSinopse", "classificacao", "scale", "categoria1", "categoria2", "categoria3", "sinopseCompleta","duracaoFilme", "faixaEtaria","bannerWallpaper"],
     methods: {
         checarScale() {
             if (this.scale == true) {
@@ -49,7 +49,13 @@ export default {
         salvar() {
             let informarcoes = {
                 name: this.nome,
-                sinopse: this.sinopseCompleta
+                sinopse: this.sinopseCompleta,
+                duracao:this.duracaoFilme,
+                faixaEtaria: this.faixaEtaria,
+                banner:this.bannerWallpaper,
+                categoriaPrimaria:this.categoria1,
+                categoriaSecundaria: this.categoria2,
+                categoriaTerceciaria: this.categoria3
             }
             informarcoes = JSON.stringify(informarcoes)
             localStorage.setItem("info", informarcoes)
