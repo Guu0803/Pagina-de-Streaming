@@ -1,26 +1,27 @@
 <template>
-    <div class="wallpaper">
+    <div class="tela">
         <div class="login">
             <div class="entrar">
                 Entrar
             </div>
-            <div class="naoPossuiConta">
+            <div class="conjunto-inputs">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Senha">
+            </div>
+            <div class="esqueci-senha">
+                Esqueci a senha
+            </div>
+            <BotaoAcao text="Entrar" />
+            <div class="nao-possui-conta">
+                <div class="separacao">
+                </div>
                 Não possui uma conta?
-                <RouterLink to="/cadastro" class="criarConta">
-                    Criar conta
-                </RouterLink>
+                <div class="separacao">
+                </div>
             </div>
-            <div class="conjuntoInputs">
-                <input type="email" value="Email">
-                <input type="password" value="password">
-            </div>
-            <div class="esqueciSenha">
-                Esqueceu a senha?
-            </div>
-            <BotaoAcao  text="Entrar" />
+            <BotaoAcao text="Criar Conta" v-on:click="criarConta()" />
         </div>
     </div>
-    
 </template>
 <script>
 import BotaoAcao from '@/components/BotoesAcao.vue'
@@ -28,55 +29,56 @@ export default {
     name: "pagina-login",
     components: {
         BotaoAcao,
+    },
+    methods: {
+        criarConta() {
+            this.$router.push('/cadastro')
+        }
     }
 }
 </script>
 <style scoped>
-body {
-    margin: 0;
-}
-
-.wallpaper {
+.tela {
     background-color: #1f1f1f;
     justify-content: center;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    padding: 5vw 0;
     display: flex;
-    align-items: center;
 }
 
 .login {
     width: fit-content;
     background-color: #1f1f1f;
-    border-radius: 2vh;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    color:#B2B2B2;
+    color: #e8e8e8;
     box-shadow: 1.5vh 1.5vh 2vh black, -1.5vh -1.5vh 2vh #343434;
     padding: 3vh;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: large;
 }
-
 
 .entrar {
     font-size: 5vh;
     text-align: center;
+    margin-bottom: 1vw;
 }
 
-.naoPossuiConta {
+.nao-possui-conta {
     display: flex;
+    align-items: center;
     gap: 1vh;
     margin-bottom: 3vh;
     justify-content: center;
+    font-size: 2vh;
 }
 
-.criarConta {
-    color: #f64348;
-    text-decoration: none;
+.separacao {
+    border-bottom: 1px solid #e8e8e8;
+    width: 5vw;
 }
 
-.conjuntoInputs {
+
+.conjunto-inputs {
     display: flex;
     flex-direction: column;
     gap: 3vh;
@@ -84,9 +86,9 @@ body {
 }
 
 input {
-    background-color: #404040;
+    background-color: #343434;
     border: none;
-    height: 5vh;
+    height: 4vh;
     width: 25vw;
     padding-left: 1vh;
     border-radius: 2vh;
@@ -94,18 +96,27 @@ input {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: medium;
     box-shadow: inset 0px 0px 1vh 0.5vh #00000020;
+    transition: 200ms ease-in-out;
+}
+
+::placeholder {
+    color: #959595;
+    font-family: 'Karla', sans-serif;
+
 }
 
 input:hover {
-    background-color: #898989;
-    transition: 100ms;
+    background-color: #646464;
+    transition: 200ms ease-in-out;
 }
 
-.esqueciSenha {
-    margin: 1vw 0 0 3vw;
-    color: #f64348;
+.esqueci-senha {
+    font-size: 2vh;
+    margin: 1vh 0 2vw 17vw;
     cursor: pointer;
-    margin-bottom: 3vh;
+
 }
 
-</style>
+.esqueci-senha:hover {
+    color: #f64348;
+}</style>

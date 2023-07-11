@@ -40,6 +40,8 @@ export default {
     display: flex;
     gap: 1vh;
     align-items: center;
+    font-family: 'Karla', sans-serif;
+
 }
 
 .botao:hover {

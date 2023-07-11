@@ -412,6 +412,7 @@ button {
     color: #e8e8e8;
     font-weight: bold;
     transition: 300ms;
+    font-family: 'Karla', sans-serif;
 }
 
 button:hover {
@@ -506,6 +507,8 @@ input[type="password"] {
 
 .botao-input {
     width: 15vw;
+    font-family: 'Karla', sans-serif;
+
 }
 
 .conteiner-pagamentos {
@@ -546,6 +549,8 @@ input[type="password"] {
     margin-left: 2vw;
     cursor: pointer;
     transition: 300ms;
+    font-family: 'Karla', sans-serif;
+
 }
 
 .alterar:hover {

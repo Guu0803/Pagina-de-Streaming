@@ -37,13 +37,13 @@
           account_circle
         </span>
         <div class="conteudo-dropdown">
-          <router-link to="/minha-conta" class="escrita-dropdown" >
+          <router-link to="/minha-conta" class="escrita-dropdown">
             Conta
           </router-link>
-          <router-link to="/meu-perfil" class="escrita-dropdown" >
+          <router-link to="/meu-perfil" class="escrita-dropdown">
             Perfil
           </router-link>
-          <router-link to="/ajuda" class="escrita-dropdown" >
+          <router-link to="/ajuda" class="escrita-dropdown">
             Ajuda
           </router-link>
           <div class="escrita-dropdown">
@@ -54,7 +54,7 @@
     </div>
 
     <router-view />
-    
+
     <div class="rodape">
       <div class="conteiner-subtiluos">
         <div class="subtitulos-rodape">
@@ -114,10 +114,11 @@
   
 <style>
 body {
-    margin: 0;
-    background-color: #1f1f1f;
-    font-family: 'Karla', sans-serif;
-    }
+  margin: 0;
+  background-color: #1f1f1f;
+  font-family: 'Karla', sans-serif;
+}
+
 .cabecalho {
   width: 100%;
   background-color: #121212;
@@ -135,7 +136,7 @@ body {
 
 .escrita-cabecalho {
   text-decoration: none;
-  color: #B2B2B2;
+  color: #e8e8e8;
   padding: 1vh;
   font-size: 3vh;
   border-bottom: #121212 3px solid;
@@ -153,7 +154,7 @@ body {
 }
 
 .escrita-dropdown {
-  color: #B2B2B2;
+  color: #e8e8e8;
   padding: 1vh 2vw;
   display: block;
   cursor: pointer;
@@ -163,7 +164,7 @@ body {
 
 .escrita-dropdown:hover {
   background-color: #f64348;
-  color: white;
+  color: #e8e8e8;
   transition: 200ms;
 }
 
@@ -185,7 +186,7 @@ body {
 
 .icones-cabecalho {
   font-size: 4vh;
-  color: #B2B2B2;
+  color: #e8e8e8;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -193,7 +194,7 @@ body {
 
 .lupa {
   font-size: 4vh;
-  color: #B2B2B2;
+  color: #e8e8e8;
   cursor: pointer;
   margin-left: -2.5vw
 }
@@ -203,7 +204,6 @@ body {
 }
 
 .rodape {
-  margin-top: 5vw;
   padding: 2vw 0;
   width: 100%;
   background-image: linear-gradient(to bottom, #060606, #121212, #1f1f1f, #2c2c2c, #393939, #454545, #5f5f5f);
@@ -216,7 +216,7 @@ body {
   display: flex;
   align-items: center;
   font-size: 2vh;
-  color: #B2B2B2;
+  color: #e8e8e8;
   cursor: pointer;
   width: fit-content;
   text-decoration: none;
@@ -234,7 +234,7 @@ body {
 
 .subtitulos-rodape {
   font-size: 3vh;
-  color: white;
+  color: #e8e8e8;
   cursor: pointer;
   width: fit-content;
 }
@@ -242,12 +242,19 @@ body {
 .subtitulos-rodape:hover {
   color: #f64348;
 }
+
 input {
   border-radius: 10px;
   border: none;
   background-color: #343434;
-  color: white;
+  color: #e8e8e8;
   padding: 1vh;
+  transition: 200ms ease-in-out;
+
+}
+input:hover {
+    background-color: #898989;
+    transition: 200ms ease-in-out;
 }
 </style>
   

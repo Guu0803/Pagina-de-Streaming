@@ -26,8 +26,7 @@
             </span><span class="material-icons dot" v-on:click="dotAlterar4()">
                 fiber_manual_record
             </span>
-            </div>
-            
+            </div>  
         </div>
         <!-- Fim -->
 
@@ -558,9 +557,9 @@ export default {
     color: #B2B2B2;
     font-size: 6vh;
     left: 1vw;
-    opacity: 0;
     transition: 200ms ease-in-out 3s;
-
+    opacity: 0;
+    z-index: 1;
 }
 
 .botao-proximo {
@@ -568,12 +567,16 @@ export default {
     cursor: pointer;
     color: #B2B2B2;
     font-size: 6vh;
-    right: 1vw;
     opacity: 0;
+    right: 1vw;
     transition: 200ms ease-in-out 3s;
 
 }
-.carrosel:hover > .botao-proximo, .botao-volta {
+.carrosel:hover > .botao-volta {
+    opacity: 1;
+    transition: 200ms ease-in-out;
+}
+.carrosel:hover > .botao-proximo {
     opacity: 1;
     transition: 200ms ease-in-out;
 }

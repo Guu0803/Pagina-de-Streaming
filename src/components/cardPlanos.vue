@@ -54,6 +54,8 @@ button {
     color: #282828;
     transition: 200ms ease-in-out;
     border: none;
+    font-family: 'Karla', sans-serif;
+
 }
 button:hover {
     color: #e8e8e8;

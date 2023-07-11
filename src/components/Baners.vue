@@ -62,6 +62,7 @@ export default {
     height: 70vh;
     background-size: cover;
     cursor: pointer;
+    position: relative;
 }
 
 .titulo-banner {

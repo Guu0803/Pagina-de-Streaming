@@ -21,20 +21,23 @@ export default {
 }
 
 .botaoAcao {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: large;
     border-radius: 2vh;
     padding: 1vh;
     width: 20vw;
     border: none;
     text-align: center;
-    background-color: #AC2E32;
+    background-color:  #f64348;
+    font-family: 'Karla', sans-serif;
+    cursor: pointer;
+    color: #282828;
+    transition: 200ms ease-in-out;
+
 }
 
 .botaoAcao:hover {
-    cursor: pointer;
-    background-color:  #f64348;
-    transition: 300ms;
+    color: #e8e8e8;
+    transition: 200ms ease-in-out;
 }
 
 </style>

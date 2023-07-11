@@ -233,6 +233,8 @@ button {
     font-weight: bold;
     transition: 300ms;
     margin-top: 2vw;
+    font-family: 'Karla', sans-serif;
+
 }
 
 button:hover {
