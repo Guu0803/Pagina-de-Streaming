@@ -5,10 +5,31 @@
                 Criar conta
             </div>
             <div class="conjunto-inputs">
-                <input class="input" type="name" placeholder="Nome Completo">
-                <input class="input" type="email" placeholder="Email">
-                <input class="input" type="password" placeholder="Senha">
-                <input class="input" type="password" placeholder="Digite a Senha novamente">
+                <input class="input" type="name" placeholder="Nome Completo" v-model="nome">
+                <input class="input" type="email" placeholder="Email" v-model="email">
+                <div class="conteiner-senha">
+                    <input class="input" :type="visulalizarSenha(senhaVisivel)" placeholder="Senha" v-model="senha">
+                    <div class="visibilidade" v-on:click="mostrarSenha()">
+                        <span class="material-icons" v-if="this.senhaVisivel == false">
+                            visibility
+                        </span>
+                        <span class="material-icons" v-if="this.senhaVisivel == true">
+                            visibility_off
+                        </span>
+                    </div>
+                </div>
+                <div class="conteiner-senha">
+                    <input class="input" :type="visualizarConfirmarSenha(senhaNovamenteVisivel)"
+                        placeholder="Digite a Senha novamente" v-model="senhaNovamente">
+                    <div class="visibilidade" v-on:click="mostrarSenhaNovamente()">
+                        <span class="material-icons" v-if="this.senhaNovamenteVisivel == false">
+                            visibility
+                        </span>
+                        <span class="material-icons" v-if="this.senhaNovamenteVisivel == true">
+                            visibility_off
+                        </span>
+                    </div>
+                </div>
             </div>
             <div class="conteiner-checkbox">
                 <input type="checkbox" class="check">
@@ -25,7 +46,7 @@
             <div class="politica" v-on:click="politica()">
                 Política de Privacidade.
             </div>
-            <BotoesAcao text="Criar conta" />
+            <BotoesAcao text="Criar conta" v-on:click="cadastrarUsuario()" />
             <div class="logar">
                 <div class="separacao">
                 </div>
@@ -33,7 +54,14 @@
                 <div class="separacao">
                 </div>
             </div>
-            <BotoesAcao text="Entrar" v-on:click="entrar()"/>
+            <BotoesAcao text="Entrar" v-on:click="entrar()" />
+        </div>
+        <div class="conteiner-msg" v-if="criouConta == true">
+            <div class="msg">
+                Conta criada com sucesso
+                <BotoesAcao text="Fechar" v-on:click="fecharMsg()"/>
+            </div>
+          
         </div>
     </div>
 </template>
@@ -44,6 +72,18 @@ export default {
     components: {
         BotoesAcao,
     },
+    data() {
+        return {
+            senhaVisivel: false,
+            senhaNovamenteVisivel: false,
+            listaUsuarios: [],
+            nome: '',
+            email: '',
+            senha: '',
+            senhaNovamente: '',
+            criouConta: false
+        }
+    },
     methods: {
         termosUso() {
             this.$router.push('/termos-de-uso')
@@ -53,7 +93,53 @@ export default {
         },
         entrar() {
             this.$router.push('/login')
+        },
+        mostrarSenha() {
+            if (this.senhaVisivel == false) {
+                this.senhaVisivel = true
+            } else {
+                this.senhaVisivel = false
+            }
+        },
+        mostrarSenhaNovamente() {
+            if (this.senhaNovamenteVisivel == false) {
+                this.senhaNovamenteVisivel = true
+            } else {
+                this.senhaNovamenteVisivel = false
+            }
+        },
+        visulalizarSenha(senhaVisiel) {
+            if (senhaVisiel == true) {
+                return "text"
+            } else {
+                return "password"
+            }
+        },
+        visualizarConfirmarSenha(senhaNovamenteVisivel) {
+            if (senhaNovamenteVisivel == true) {
+                return "text"
+            } else {
+                return "password"
+            }
+        },
+        cadastrarUsuario() {
+            if (this.senha == this.senhaNovamente) {
+                let Usuario = {
+                    nomeUsuario: this.nome,
+                    emailUsario: this.email,
+                    senhaUsario: this.senha,
+                    id: this.listaUsuarios.length + 1
+                }
+                this.listaUsuarios.push(Usuario)
+                console.log(this.listaUsuarios)
+                localStorage.setItem("Usuario", JSON.stringify(Usuario))
+            }
+        },
+        fecharMsg(){
+            this.criouConta = false
         }
+
+
     }
 
 }
@@ -66,6 +152,7 @@ export default {
     padding: 5vw 0;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .quadro {
@@ -98,10 +185,11 @@ export default {
     width: 25vw;
     padding-left: 1vh;
     border-radius: 2vh;
-    color: black;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #e8e8e8;
     font-size: medium;
     box-shadow: inset 0px 0px 1vh 0.5vh #00000020;
+    font-family: 'Karla', sans-serif;
+
 }
 
 ::placeholder {
@@ -118,6 +206,23 @@ input[type=checkbox] {
 input:hover {
     background-color: #646464;
     transition: 200ms ease-in-out;
+}
+
+.conteiner-senha {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #959595;
+}
+
+.visibilidade {
+    position: absolute;
+    right: 1vw;
+    cursor: pointer;
+}
+
+.visibilidade:hover {
+    color: #f64348;
 }
 
 .conteiner-checkbox {
@@ -145,6 +250,7 @@ input:hover {
     color: #f64348;
     cursor: pointer;
 }
+
 .logar {
     display: flex;
     align-items: center;
@@ -153,8 +259,32 @@ input:hover {
     justify-content: center;
     font-size: 2vh;
 }
+
 .separacao {
     border-bottom: 1px solid #e8e8e8;
     width: 5vw;
+}
+.conteiner-msg {
+    position: absolute;
+    color: #e8e8e8;
+    font-size: 3vh;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.msg {
+    width: fit-content;
+    height: auto;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    text-align: center;
+
 }
 </style>

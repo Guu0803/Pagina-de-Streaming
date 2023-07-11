@@ -6,7 +6,17 @@
             </div>
             <div class="conjunto-inputs">
                 <input type="email" placeholder="Email">
-                <input type="password" placeholder="Senha">
+                <div class="conteiner-senha">
+                    <input type="password" placeholder="Senha">
+                    <div class="visibilidade" v-on:click="mostrarSenha()">
+                        <span class="material-icons" v-if="senhaVisiel == false">
+                            visibility
+                        </span>
+                        <span class="material-icons" v-if="senhaVisiel == true">
+                            visibility_off
+                        </span>
+                    </div>
+                </div>
             </div>
             <div class="esqueci-senha">
                 Esqueci a senha
@@ -30,9 +40,21 @@ export default {
     components: {
         BotaoAcao,
     },
+    data() {
+        return {
+            senhaVisiel: false
+        }
+    },
     methods: {
         criarConta() {
             this.$router.push('/cadastro')
+        },
+        mostrarSenha() {
+            if(this.senhaVisiel == false){
+                this.senhaVisiel = true
+            } else {
+                this.senhaVisiel = false
+            }
         }
     }
 }
@@ -83,6 +105,24 @@ export default {
     flex-direction: column;
     gap: 3vh;
     align-items: center;
+    justify-content: center;
+}
+
+.conteiner-senha {
+    display: flex;
+    align-items: center;
+    color: #959595;
+    position: relative;
+}
+
+.visibilidade {
+    position: absolute;
+    right: 1vw;
+    cursor: pointer;
+}
+
+.visibilidade:hover {
+    color: #f64348;
 }
 
 input {

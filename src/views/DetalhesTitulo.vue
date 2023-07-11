@@ -41,6 +41,15 @@
                 </span>
                 Lista
             </div>
+            <div class="conteiner-play" v-on:click="baixar()">
+                <span class="material-icons" v-if="baixado == false">
+                    download
+                </span>
+                <span class="material-icons" v-if="baixado == true">
+                    download_done
+                </span>
+                Baixar
+            </div>
         </div>
         <div class="sinopse">
             {{ informarcoes.sinopse }}
@@ -70,24 +79,31 @@ export default {
     data() {
         return {
             informarcoes: {},
-            adicionadoLista: false
+            adicionadoLista: false,
+            baixado: false
         }
     },
     methods: {
-        getImage(){
+        getImage() {
             return "background-image: url(" + this.informarcoes.banner + ")"
         },
-        voltar(){
+        voltar() {
             this.$router.go(-1)
         },
-        addLista(){
-            if(this.adicionadoLista == false) {
+        addLista() {
+            if (this.adicionadoLista == false) {
                 this.adicionadoLista = true
             } else {
                 this.adicionadoLista = false
             }
-           
         },
+        baixar(){
+            if(this.baixado == false){
+                this.baixado = true
+            } else {
+                this.baixado = false
+            }
+        }
     },
     created() {
         let informarcoesSalva = localStorage.getItem("info")

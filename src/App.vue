@@ -84,9 +84,9 @@
         <div class="escrita-rodape">
           Sobre
         </div>
-        <div class="escrita-rodape">
+        <RouterLink to="/ajuda" class="escrita-rodape">
           Ajuda
-        </div>
+        </RouterLink>
         <router-link to="/termos-de-uso" class="escrita-rodape">
           Termos de Uso
         </router-link>
@@ -101,12 +101,12 @@
         <div class="subtitulos-rodape">
           Conta
         </div>
-        <div class="escrita-rodape">
-          Criar Conta
-        </div>
-        <div class="escrita-rodape">
+        <RouterLink to="/login" class="escrita-rodape">
           Login
-        </div>
+        </RouterLink>
+        <RouterLink to="/cadastro" class="escrita-rodape">
+          Criar Conta
+        </RouterLink>
       </div>
     </div>
   </div>
@@ -206,10 +206,11 @@ body {
 .rodape {
   padding: 2vw 0;
   width: 100%;
-  background-image: linear-gradient(to bottom, #060606, #121212, #1f1f1f, #2c2c2c, #393939, #454545, #5f5f5f);
+  background-color: #181818;
   height: 30vh;
   display: flex;
   justify-content: space-around;
+  margin-top: 5vw;
 }
 
 .escrita-rodape {
@@ -252,9 +253,10 @@ input {
   transition: 200ms ease-in-out;
 
 }
+
 input:hover {
-    background-color: #898989;
-    transition: 200ms ease-in-out;
+  background-color: #898989;
+  transition: 200ms ease-in-out;
 }
 </style>
   

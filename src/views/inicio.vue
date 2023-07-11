@@ -127,7 +127,7 @@ export default {
     gap: 3vw;
     align-items: center;
     z-index: 1;
-    max-width: 40vw;
+    max-width: 43vw;
     text-align: center;
 
 }
@@ -190,23 +190,23 @@ button:hover {
     background-size: cover;
     width:57vw;
     height: 65vh;
-    margin-left: 7vh;
-    box-shadow: 10px 10px 25px 25px #1f1f1f inset, -55px -50px 50px #1f1f1f inset;
+    margin-left: 4vh;
+    box-shadow: 10px 10px 25px 15px #1f1f1f inset, -55px -50px 50px #1f1f1f inset;
 }
 .conteiner-banner-secundario {
     display: flex;
     align-items: center;
 }
 .titulo-banner-secundario {
-    font-size: 4.5vh;
+    font-size: 4.4vh;
     display: flex;
-    gap: 2vh;
+    gap: 1vh;
     margin-bottom: 2vw;
 }
 .descricao-banner-secundario{
     color: #e8e8e8;
     z-index: 1;
-    max-width: 45vw;
+    max-width: 48vw;
     text-align: center;
     font-size: 3vh;
     margin-left: -2vw;
